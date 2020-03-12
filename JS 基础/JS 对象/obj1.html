@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //通过对象字面量的形式创建对象
+            var obj={};
+            // alert(typeof obj);
+
+            var obj1={x:1,y:2,z:3};
+            var obj2={
+                'x':1,
+                "y":2,
+                username:'king',
+                'for':'Javascript关键字必须放到引号之间',
+                married:true,
+                test:null,
+                test1:undefined,
+                salary:12.3,
+                person:{
+                    username: 'king',
+                    age:12,
+                    addr:'北京',
+                }
+            }
+
+
+            //通过new Object()创建对象
+            var obj3=new Object();
+            var arr=new Array();
+            var date=new Date();
+
+            //通过构造函数的形式创建对象
+            function Test() {
+
+            }
+            var obj4=new Test();//new不要忘了
+            // alert(typeof obj4);
+
+            function Test1(num1,num2) {
+                this.n1=num1;
+                this.n2=num2;
+            }
+            var obj5=new Test1(5,6);
+            // alert(typeof obj5);
+            //通过instanceof操作符可以检测一个对象是否由某个指定的构造器函数创建的
+            alert(obj5 instanceof Test1);
+
+
+            //通过Object.create()创建对象
+            var obj6=Object.create({x:1});
+            var obj7=Object.create(null);
+            //创建一个普通的空对象
+            var obj8=Object.create(Object.prototype);
+        </script>
+    </body>
+</html>

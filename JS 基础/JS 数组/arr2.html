@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>arr2</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var arr = [];
+    arr[0] = 'a';
+    arr[1] = 'b';
+    arr.push('c');
+    arr.push('d', 'e', 'f', 12, 34);
+    console.log(arr);
+    var res = arr.pop();
+    console.log(res);
+    console.log(arr);
+    arr.unshift(1, 2, 3, 4, 5); //在数组首部添加元素
+    console.log(arr);
+    console.log(arr.shift()); //弹出数组首部的元素
+    console.log(arr);
+
+    var arr = ['a', 'b', 'c', 'd', 'f'];
+    delete arr[0];
+    console.log(arr);
+    console.log(arr.length); //5,长度不变
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //全局变量和局部变量的区别
+            function test() {
+                var x = 1;
+                alert(x);
+            }
+            // test();
+            // alert(x);//没有定义，通过var关键字在函数体内创建局部变量
+
+            function test1() {
+                y = 2;
+                alert(y);
+            }
+            // test1();
+            // alert(y);
+
+
+            var x=1,y=2;
+            function calc(x,y) {
+                document.write('a的值为：'+a+'<br>');
+                document.write('函数体内x的值为：'+x+'<br>');
+                document.write('函数体内y的值为：'+y+'<br>');
+                var x=0,y=6;//函数体内通过var创建的是局部变量，作用域仅限函数体内
+                z=x+y;//这个z是全局变量
+                var a=198;
+                document.write('a的值为：'+a+'<br>');
+                document.write('x的值为：'+x+'<br>');
+                return z;
+            }
+            // alert(calc(x,y));
+            // alert(x+'-'+y+'-'+z);//1-2-6
+
+            var a=1,b=2;
+            function test1() {
+                var a=5,b=10;
+                z=a+b;
+                return z;
+            }
+            function test2() {
+                var a=11,b=22;
+                z=a+b;
+                return z;
+            }
+            alert(test1());
+            alert(test2());
+            alert(a+'--'+b);
+        </script>
+    </body>
+</html>

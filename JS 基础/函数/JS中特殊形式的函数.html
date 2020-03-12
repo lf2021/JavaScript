@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS中特殊形式的函数</title>
+    </head>
+    <body>
+        <script>
+            //私有化函数的例子
+            // function a(param) {
+            //     function b(param1) {
+            //         return param1+10;
+            //     }
+            //     return "在a函数体内调用b函数的结果为："+b(param);
+            // }
+            // document.write(a(5));
+            // document.write(b(1));//b is undefined
+
+
+            // function a(param) {
+            //     var b = function (param1) {
+            //         return param1+10;
+            //     };
+            //     return "在a函数体内调用b的结果："+b(param);
+            // }
+            // document.write(a(5));
+
+
+            //返回函数的函数
+            // function a() {
+            //     alert('aaa');
+            //     return function () {
+            //         alert('bbb');
+            //     };
+            // }
+            // var func = a();
+            // func();
+
+
+
+            //重写自己的函数
+            // function a() {
+            //     alert('aaa');
+            //     a = function () {
+            //         alert('bbbb');
+            //     };
+            // }
+            // a();
+            // a();
+
+            var a = function () {
+                function setUp() {
+                    var setup = "doSomething";
+                }
+                function doWhat(){
+                    alert('要执行的操作');
+                }
+                setUp();
+                return doWhat;
+            }();
+            a();
+        </script>
+    </body>
+</html>

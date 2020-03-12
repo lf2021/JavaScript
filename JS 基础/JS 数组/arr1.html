@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>数组</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //通过数组直接量形式创建数组
+    var arr = [];
+    var arr1 = [1, 2, 3];
+    var arr2 = [1, 2.3, true, null, undefined, [12, 3], {
+      x: 1,
+      y: 2
+    }];
+    var x = 1;
+    var arr3 = [x, x * 3, x + 2];
+    console.log(arr3);
+    var arr4 = [1, , 3]; //[1,undefined,3]
+    // alert(arr4);
+    console.log(arr4.length); //3
+    var arr5 = [, , ];
+    console.log(arr5.length); //2
+
+    //通过构造函数Array()创建数组
+    var a = new Array(); //[]
+    var a = new Array(5);
+    console.log(a.length);
+    var a = new Array(1, 2, 'king', false, 2.3, null); //[1,2,'king',false,2.3,null]
+    console.log(a);
+
+
+    var arr = [1, 2, 3, 4];
+    console.log(arr[0]); //1
+    console.log(arr[3]); //4
+    arr[0] = 'king';
+    console.log(arr);
+    arr[5] = 'hello world';
+    console.log(arr);
+    var x = 2;
+    console.log(arr[x]);
+    arr[arr[x]] = 333;
+    console.log(arr);
+    var obj = {};
+    obj[0] = 'a';
+    obj[1] = 'b';
+    // console.log(obj);
+    var arr = [];
+    arr[0] = 'a';
+    arr[1] = 'b';
+    arr[-122] = 'c';
+    arr[2.3] = 'd';
+    arr[false] = 'e';
+    arr[null] = 'f';
+    arr[undefined] = 'g';
+    arr['name'] = 'h';
+    console.log(arr); //索引必须是非负整数，否则length是不变的
+    console.log(arr.length);
+    var arr = new Array(10);
+    arr = [];
+    arr[100] = 'a'; //length=101
+    console.log(arr.length);
+
+    var arr = [1, 2, 3, , 4, 5, 6, 7, 8];
+    arr.length = 3;
+    console.log(arr); //[1,2,3]
+    arr.length = 0;
+    console.log(arr); //[]
+    arr.length = 5;
+    console.log(arr); //[]
+
+
+    var arr = [1, 2, 3];
+    Object.defineProperty(arr, 'length', {
+      writable: false
+    });
+    console.log(arr.length); //3
+    arr.length = 5;
+    console.log(arr.length); //3,length属性设置为不可写，所以长度不变
+  </script>
+</body>
+
+</html>

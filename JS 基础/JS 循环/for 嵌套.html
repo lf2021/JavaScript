@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //for循环的嵌套
+            for (var i=1;i<=9;i++){
+                document.write('外层循环第'+i+'次的结果<br/>');
+                for (var j=1;j<=2;j++){
+                    document.write('内层循环第'+j+'次的结果<br/>');
+                }
+                document.write('<hr>');
+            }
+        </script>
+
+
+
+
+        <!--<table border="1" cellpadding="0" cellspacing="0" bgcolor="aqua" width="80%">
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>
+        </table>-->
+
+
+
+        <table border="1" cellpadding="0" cellspacing="0" bgcolor="aqua" width="80%">
+            <script type="text/javascript">
+                for (var i=1;i<=3;i++){
+                    document.write('<tr>');
+                    for (var j=1;j<=3;j++){
+                        document.write('<td>x</td>')
+                    }
+                        // document.write('<td>x</td>');
+                        // document.write('<td>x</td>');
+                        // document.write('<td>x</td>');
+                    document.write('</tr>');
+                }
+            </script>
+        </table>
+
+
+        <script type="text/javascript">
+            document.write('<hr color="red">');
+            document.write('<table border="1" cellpadding="0" cellspacing="0" bgcolor="#faebd7" width="80%">');
+                for (var i=1;i<=9;i++){
+                    document.write('<tr>');
+                        for (var j=1;j<=i;j++){
+                            document.write('<td>'+j+'x'+i+'='+(j*i)+'</td>');
+                        }
+                    document.write('</tr>');
+                }
+            document.write('</table>');
+        </script>
+
+
+
+        //打印倒的九九乘法表
+        <script type="text/javascript">
+            document.write('<table border="1" cellspacing="0" cellpadding="0" bgcolor="#8b0000" width="80%">');
+            for (var i=9;i>=1;i--){
+                document.write('<tr>');
+                    for (var j=1;j<=i;j++){
+                        document.write('<td>'+j+'x'+i+'='+(i*j)+'</td>');
+                    }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        </script>
+
+<!--        通过for循环实现百钱买百鸡的题-->
+<!--        公鸡5元每只，母鸡3元每只，小鸡3只1元，100元可以买100只鸡有多少种买法-->
+        <script type="text/javascript">
+            var x,y,z;
+            for (x=0;x<=20;x++){
+                for (y=0;y<=33;y++){
+                    for (z=0;z<=100;z++){
+                        if ((5*x+3*y+z/3==100) && (x+y+z==100)){
+                            document.write('公鸡：'+x+'\t母鸡：'+y+'\t小鸡：'+z+'<hr>');
+                        }
+                    }
+                }
+            }
+
+            document.write('<hr>');
+            for (var i=0;i<=20;i++){
+                for (var j=0;j<=33;j++){
+                    z = 100-i-j;
+                    if ((z%3==0)&&(5*i+3*j+z/3==100)){
+                        document.write('公鸡：'+i+'\t母鸡：'+j+'\t小鸡：'+z+'<hr>');
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

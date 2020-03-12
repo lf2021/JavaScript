@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <!--
+            addEventListener() 方法用于向指定元素添加事件句柄。<br>
+            语法：element.addEventListener(event, function, useCapture)<br>
+            event：必须。字符串，指定事件名。注意: 不要使用 "on" 前缀。 例如，使用 "click" ,而不是使用 "onclick"。<br>
+            function：必须。指定要事件触发时执行的函数。<br>
+            useCapture：可选。布尔值，指定事件是否在捕获或冒泡阶段执行。true - 事件句柄在捕获阶段执行；false- false- 默认。事件句柄在冒泡阶段执行<br>
+
+        -->
+        <div id="box1" style="background: #ABCDEF;width: 300px;height: 300px;">
+            <input type="button" value="test1" id="btn1">
+        </div>
+        <script type="text/javascript">
+            var btn1=document.getElementById('btn1');
+            var box1=document.getElementById('box1');
+            btn1.addEventListener('click',function (e) {
+                alert('button clicked');
+                var e =  e || window.event;
+                if (typeof e.cancelBubble=='undefined'){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble=true;
+                }
+            },false);
+            box1.addEventListener('click',function () {
+                alert('div clicked');
+            },false);
+            document.body.addEventListener('click',function () {
+                alert('body clicked');
+            },false);
+            document.documentElement.addEventListener('click',function () {
+                alert('html clicked');
+            },false);
+            document.addEventListener('click',function () {
+                alert('document clicked');
+            },false);
+        </script>
+    </body>
+</html>

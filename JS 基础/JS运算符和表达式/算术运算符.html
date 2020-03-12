@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <Script type="text/javaScript">
+
+        //算术运算符的例子
+
+        var i=3,j=8;
+        document.write(i+j);
+        document.write('<br/>');
+        document.write(i-j);
+        document.write('<br/>');
+        document.write(i*j);
+        document.write('<br/>');
+        document.write(i/j);
+        document.write('<br/>');
+        document.write(i%j);
+        document.write('<br/>');
+        document.write(3%-8);//3
+        document.write('<br/>');
+        document.write(-3%8);//-3
+        document.write('<br/>');
+        document.write(-3%-8);
+        document.write('<br/>');//-3，只有前面一个负号起作用
+        //+比较特殊
+        document.write(i+'8');
+        document.write('<br/>');
+        document.write('2'+'8');
+        document.write('<br/>');
+        document.write(i+j+'3king');//113king，从左往右执行
+        document.write('<br/>');
+        document.write(''+i);
+        var z=''+i;
+        //  alert(typeof z);//String
+        document.write('<br/>');
+        document.write(''+i+j+'3king');//383king
+
+        document.write('<br/>');
+        //自增自减运算符 ++ --
+        //整型支持自增 自减运算符
+        var num1=1;
+        // alert(num1++);
+         // alert(num1);
+        //  alert(++num1);
+        //  alert(--num1);
+        //浮点型支持自增自减运算符
+        // num1=12.3;
+        //  alert(--num1);
+        num1=true;
+        num1=false;
+        // alert(++num1);
+        //  alert(--num1);
+        //字符串型不支持自增自减运算符
+        num1='3b';
+        //  alert(++num1);
+        //  alert(--num1);
+        //null支持自增自减运算符
+        num1=null;
+         // alert(++num1);
+         // alert(--num1);
+        num1=undefined;
+        alert(++num1);
+    </Script>
+</head>
+<body>
+
+</body>
+</html>

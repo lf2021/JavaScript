@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    //自定义构造函数找出一些数字中的最大值
+    // function MyMath() {
+    //   this.getMax = function () {
+    //     var max = arguments[0];
+    //     for (var i = 0; i < arguments.length; i++) {
+    //       if (max < arguments[i]) {
+    //         max = arguments[i];
+    //       }
+    //     }
+    //     return max;
+    //   }
+    // }
+    // var mt = new MyMath();
+    // var res = mt.getMax(10,20,40,90,1000);
+    // console.log(res);
+
+
+    //随机产生一个十六进制的颜色
+    // function getColor() {
+    //   var str = "#";
+    //   var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+    //   for (var i = 0; i < 6; i++) {
+    //     var num = Math.floor(Math.random() * 16);
+    //     str += arr[num];
+    //   }
+    //   return str;
+    // }
+
+    // window.onload = function () {
+    //   document.getElementById("app").style.backgroundColor = getColor();
+    // };
+    // var res = getColor();
+    // console.log(res);
+  </script>
+
+  <script>
+    //找出字符串中的 o 的所以索引值 
+    // var str="hello world open the door";
+    // var index=0;
+    // var key="o";
+    // while((index=str.indexOf(key,index))!=-1){
+    //   console.log(index);
+    //   index+=key.length;
+    // }
+
+
+    //找出字符串中每个字符串出现了多少次
+    // var str = "What Are You Nong Sha Lei?";
+    // str = str.toLowerCase();
+    // var obj = {};
+    // for (var i = 0; i < str.length; i++) {
+    //   var key = str[i];
+    //   if (obj[key]) {
+    //     obj[key]++;
+    //   } else {
+    //     obj[key] = 1;
+    //   }
+    // }
+    // for (var key in obj){
+    //   console.log(key+"出现了"+obj[key]+"次");
+    // }
+
+
+
+    var arr = [1,2,3,4,5,6,7];
+    console.log(arr.join('\n
+    '));
+  </script>
+</head>
+
+<body>
+  <script>
+    // var i=100;
+    // var sum=0;
+    // while(i<=200){
+    //   if(i%10==3){
+    //     i++;
+    //     continue;
+    //   }
+    //   sum+=i;
+    //   i++;
+    // }
+    // console.log(sum)
+  </script>
+
+
+  <script>
+    /* var arr = [10, 0, 20, 0, 30, 0, 50];
+    var newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] != 0) {
+        newArr[newArr.length] = arr[i];
+      }
+    }
+    console.log(newArr) */
+  </script>
+
+
+  <script>
+    //反转数组
+    // var arr = [10,20,30,40,50];
+    // var newArr= [];
+    // for(var i=0;i<=arr.length-1;i++){
+    //   newArr[arr.length-1-i]=arr[i]
+    // }
+    // console.log(newArr)
+
+
+
+    // var arr = [10,20,30,40,50];
+    // for(var i=0;i<=arr.length/2;i++){
+    //   temp=arr[i];
+    //   arr[i]=arr[arr.length-1-i];
+    //   arr[arr.length-1-i]=temp;
+    // }
+    // console.log(arr)
+
+
+
+    // var perCount = parseInt(prompt("请输入班级人数："));
+    // var perScore = [];
+    // for (var i = 0; i < perCount; i++) {
+    //   var score = parseInt(prompt("请输入第" + (i + 1) + "个人的成绩："));
+    //   perScore[perScore.length]=score;
+    // }
+    // console.log(perScore);
+    // //总成绩 平均值 最低分
+    // var sumScore=0;
+    // var minScore=perScore[0];
+    // for(var i=0;i<perScore.length;i++){
+    //   sumScore+=perScore[i];
+    //   if(perScore[i]<minScore){
+    //     minScore=perScore[i];
+    //   }
+    // }
+    // console.log("总成绩："+sumScore);
+    // console.log("平均值："+sumScore/perScore.length);
+    // console.log("最低分："+minScore);
+  </script>
+
+
+  <script>
+    // //排序 方法一
+    // arr = [2, 4, 3, 6, 1, 5];
+    // for (var i = 0; i < arr.length - 1; i++) {
+    //   for (var j = 0; j < arr.length - 1 - i; j++) {
+    //     if (arr[j] > arr[j + 1]) {
+    //       var temp = arr[j];
+    //       arr[j] = arr[j + 1];
+    //       arr[j + 1] = temp
+    //     }
+    //   }
+    // }
+    // console.log(arr);
+
+
+    //方法二
+    // arr = [2, 4, 3, 6, 1, 5];
+    // arr.sort(function (a, b) {
+    //   return a - b
+    // });
+    // console.log(arr);
+  </script>
+
+
+
+
+  <script>
+    //判断一个数是否是质数
+    // function isPrime(num){
+    //   for(var i=2;i<num;i++){
+    //     if(num%i==0){
+    //       return false;
+    //     }
+    //   }
+    //   return true;
+    // }
+    // console.log(isPrime(prompt("请输入一个数"))?"是质数":"不是质数");
+
+
+    // var num =Number(prompt("请输入一个正整数,判断此数是不是素数"));//要判断的数
+    // var flag = true;//假设变量  值为true 是素数 
+    // for( var i = 2 ; i < num ; i++ ){
+    //     if( num % i == 0 ){//满足这个条件  说明有因子了  不是素数
+    //         flag = false;//不是素数
+    //         break;
+    //     }
+    // }
+    // //如果假设成立  
+    // if( flag && num != 1 ){ //1不是素数
+    //     document.write( num + "是素数" );
+    // }else{
+    //     document.write( num + "不是素数" );
+    // }
+
+
+
+
+    //冒泡排序
+    // var arr=[1,3,2,5,4];
+    // for (var i=0;i<arr.length-1;i++){
+    //   for (var j=0;j<arr.length-1-i;j++){
+    //     if(arr[j]>arr[j+1]){
+    //       var temp=arr[j+1];
+    //       arr[j+1]=arr[j];
+    //       arr[j]=temp;
+    //     }
+    //   }
+    // }
+    // console.log(arr)
+
+
+
+    //求三个数的最大值  函数
+    // function getThreeMax(x,y,z){
+    //   return x>y?(x>z?x:z):(y>z?y:z);
+    // }
+    // console.log(getThreeMax(1,2,3))
+
+
+
+
+    //给定一个年月日，算出这是这个月的第几天
+    // function getDays(year, month, day) {
+    //   var days = day;
+    //   if (month == 1) { //2017.1.12
+    //     return days;
+    //   }
+    //   var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    //   for (var i = 0; i < month - 1; i++) {
+    //     days += months[i];
+    //   }
+    //   if (isLeapYear(year)) {
+    //     days++;
+    //   }
+    //   return days;
+    // }
+
+    // function isLeapYear(year) {
+    //   return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    // }
+    // console.log(getDays(2020, 3, 10))
+
+
+
+
+    //求一个数字的阶乘和
+    // function getJieCheng(num){
+    //   var res=1;
+    //   for (var i=1;i<=num;i++){
+    //     res*=i;
+    //   }
+    //   return res;
+    // }
+    // function jieChengHe(num){
+    //   var res=0;
+    //   for(var i=1;i<=num;i++){
+    //     res+=getJieCheng(i);
+    //   }
+    //   return res;
+    // }
+    // console.log(jieChengHe(5))
+
+
+
+    //arguments对象伪数组
+    // function f1(){
+    //   // console.log(arguments.length);
+    //   console.log(arguments);
+    // }
+    // f1(10,20,30,40);
+
+
+    //匿名函数
+    // var f = function () {
+    //   console.log("我真帅啊！");
+    // }
+    // f();
+
+
+
+    //函数作为参数使用
+    // function f1(fn) {
+    //   fn(); //函数调用 fn存的是一个函数（的代码）
+    // }
+
+    // function f2() {
+    //   console.log("我真TMD 帅啊！");
+    // }
+    // f1(f2); //f2一定不能加括号
+
+
+    //回调函数
+    // function f1() {
+    //   console.log("f1函数调用了")
+    //   return function () {
+    //     console.log("这是一个函数");
+    //   }
+    // }
+    // f1()();
+  </script>
+
+
+
+  <script>
+    // function f1() {
+    //   var a;
+    //   a=9;//局部变量
+    //   b=9;//隐式全局变量
+    //   c=9;//隐式全局变量
+    //   console.log(a); //9
+    //   console.log(b); //9
+    //   console.log(c); //9
+    // }    
+    // f1();
+    // console.log(c); //9
+    // console.log(b); //9
+    // console.log(a); //报错
+
+
+
+
+    // console.log(a);
+    // function a() {
+    //   console.log('aaaaa');
+    // }
+    // var a = 1;
+    // console.log(a);
+
+
+
+    // var a;
+    // a = 18;
+    // function f1() {
+    //   var b;
+    //   var a;
+    //   b = 9;
+    //   console.log(a);//a只有声明，没有赋值，所以是undefined
+    //   console.log(b);//9
+    //   a = '123';
+    // }
+    // f1();
+
+    // var f1; //声明变量
+    // f1(); //f1是一个变量，并不是函数，所以报错 f1 is not a function
+    // f1 = function () {
+    //   console.log(a); //这里不会执行
+    //   var a = 10;
+    // }
+  </script>
+
+
+  <script>
+    // //自定义构造函数创建对象
+    // //函数与构造函数的区别在于名字（首字母）是不是大写
+    // function Person(name, age) {
+    //   this.name = name;
+    //   this.age = age;
+    //   this.sayHi = function () {
+    //     console.log("我叫" + this.name + ",年龄是：" + this.age);
+    //   }
+    // }
+    // var obj1 = new Person("小明", 10);
+    // console.log(obj1.name);
+    // console.log(obj1.age);
+    // obj1.sayHi();
+
+    // var obj2 = new Person("小芳", 18);
+    // console.log(obj2.name);
+    // console.log(obj2.age);
+    // obj2.sayHi();
+
+    // console.log(obj1 instanceof Person); //true
+    // console.log(obj2 instanceof Person); //true
+
+    // //自定义狗的构造函数
+    // function Dog(name, age, sex) {
+    //   this.name = name;
+    //   this.age = age;
+    //   this.sex = sex;
+    // }
+    // var dog = new Dog("小黑", 10, "男");
+    // console.log(dog instanceof Person) //false
+    // console.log(dog instanceof Dog) //true
+  </script>
+
+
+
+  <script>
+    // var arr = [1,2,3,4,5,6,7,8];
+    // arr[1] = 10;
+    // console.log(arr);
+    // var obj = {name:"Lee",age: 25};
+    // obj["name"] = "Van";
+    // console.log(obj)
+
+
+
+
+
+    // //遍历对象，是不能通过for循环遍历，无序
+    // var json = {
+    //   "name": "Lee",
+    //   "age": "25",
+    //   "sex": "female"
+    // };
+    // var key = "height";
+    // console.log(json[key]); //undefined
+
+    // //只要 . 了之后，score属性就被创建了，只不过没有赋值
+    // console.log(json.score) //undefined
+
+    // //可以通过for-in循环
+    // for (var key in json) {
+    //   //这里不能用.来拿值，用点会创建新的名为key的属性
+    //   // console.log(key+"---"+json.key);//这是不对的
+    //   console.log(key + "---" + json[key]);
+    //   /* 输出结果：
+    //     name---Lee
+    //     age---25
+    //     sex---female
+    //   */
+    // }
+
+
+    // var num1 = 55;
+    // var num2 = 66;
+    // num2 = 100;
+
+    // function f1(num, num1) {
+    //   num = 100; //局部变量，这里的num是函数体内的局部变量
+    //   num1 = 100; //局部变量
+    //   console.log(num);
+    //   console.log(num1);
+    //   console.log(num2);
+    // }
+    // f1(num1, num2);
+    // console.log(num1);
+    // console.log(num2);
+    // console.log(num); //并没有num的全局变量
+  </script>
+
+
+
+
+  <div id="app" style="width: 200px; height: 200px; background-color: pink;"></div>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <style>
+    /* img {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    } */
+    .cls {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .black {
+      background-color: #000;
+    }
+  </style> -->
+</head>
+
+<body>
+  <!-- <input type="button" value="修改下面内容" onclick="change()" />
+  <p id="demo">我好帅啊</p>
+  <script>
+    function change() {
+      document.getElementById('demo').innerText  = "你真丑";
+    }
+    
+  </script> -->
+
+  <!-- <input type="button" value="change" onclick="change()" />
+  <a href="http:www.baidu.com" id="demo">百度</a>
+  <script>
+    function change() {
+      document.getElementById("demo").href = "http://www.jd.com";
+      document.getElementById("demo").innerText = "京东"
+    }
+  </script> -->
+
+
+  <!-- <input type="button" value="change" onclick="change()">
+  <div id="dv1">
+    <p>哈哈，我又帅了</p>
+    <p>哈哈，我又帅了</p>
+    <p>哈哈，我又帅了</p>
+    <p>哈哈，我又帅了</p>
+    <p>哈哈，我又帅了</p>
+    <p>哈哈，我又帅了</p>
+  </div>
+  <div id="dv2">
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+    <p>嘎嘎</p>
+  </div>
+  <script>
+    function change() {
+      var pObjs = document.getElementById("dv1").getElementsByTagName("p");
+      // console.log(pObjs)//返回的是一个数组
+      for (var i = 0; i < pObjs.length; i++) {
+        pObjs[i].innerText = "我们都是p";
+      }
+    }
+  </script> -->
+
+  <!-- <input type="button" value="change" onclick="change()">
+  <img src="./JS 事件/山.jpg" alt="山" title="mountain" id="im">
+  <script>
+    function change() {
+      document.getElementById("im").alt="shan";
+      document.getElementById("im").title="shan";
+    }
+  </script> -->
+
+  <!-- <input type="button" value="change" id="btn"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <input type="text"><br>
+  <script>
+    document.getElementById("btn").onclick=function (){
+      var inputs = document.getElementsByTagName("input");
+      for (var i=0;i<inputs.length;i++){
+        if(inputs[i].type!="button") {
+          inputs[i].value = "我是李凡"
+        }
+      }
+    };
+  </script> -->
+
+  <!-- <img src="wz.jpg">
+  <img src="wz.jpg">
+  <img src="wz.jpg">
+  <img src="wz.jpg">
+  <img src="wz.jpg">
+  <img src="wz.jpg">
+  <img src="wz.jpg">
+  <script>
+    var imgs = document.getElementsByTagName("img");
+    for (var i = 0; i < imgs.length; i++) {
+      imgs[i].onclick = function () {
+        alert("这是个旺仔头像");
+      }
+    }
+  </script> -->
+
+  <!-- <input type="button" value="按钮" id="btn">
+  <script>
+    var btnObj = document.getElementById("btn");
+    btnObj.onclick=function(){
+      this.value="我被修改了";
+      this.type="text";
+      this.id="btn2"
+    }
+  </script> -->
+
+  <!-- <img src="./JS 事件/山.jpg" id="im">
+  <script>
+    var imgObj = document.getElementById("im");
+    imgObj.onclick = function () {
+      this.width = "200";
+      this.height = "200";
+    }
+  </script> -->
+
+  <!-- <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <script>
+    var btnObjs = document.getElementsByTagName("input");
+    for (var i = 0; i < btnObjs.length; i++) {
+      //为每个事件注册点击事件
+      btnObjs[i].onclick = function () {
+        //把所有按钮的value值设置为默认：没怀孕
+        for (var j = 0; j < btnObjs.length; j++) {
+          btnObjs[j].value="没怀孕";
+        }
+        //当前被点击的按钮设置为：怀孕了
+        this.value = "怀孕了";
+      };
+    }
+  </script> -->
+
+  <!-- <input type="button" value="显示大图" id="btn">
+  <img src="wz.jpg" id="im">
+  <script>
+    function my$(id){
+      return document.getElementById(id);
+    }
+
+    my$("btn").onclick=function(){
+      my$("im").src="./JS 事件/山.jpg";
+    }
+  </script> -->
+
+  <!-- <input type="button" value="修改性别" id="btn1">
+  <input type="radio" name="sex" value="1">男
+  <input type="radio" name="sex" value="1" id="rad1">女
+  <input type="radio" name="sex" value="1">保密
+
+  <script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+
+    my$("btn1").onclick = function () {
+      my$("rad1").checked = true;
+    }
+  </script> -->
+
+  <!-- <input type="button" value="显示" id="btn">
+  <div id="dv"></div>
+  <script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+    my$("btn").onclick = function () {
+      // my$("dv").style.width = "100px";
+      // my$("dv").style.height = "100px";
+      // my$("dv").style.backgroundColor = "pink";
+      if (my$("dv").className != "cls") {
+        this.value = "隐藏";
+        my$("dv").className = "cls";
+      } else {
+        this.value = "显示";
+        my$("dv").className = "";
+      }
+    }
+  </script> -->
+
+  <!-- <input type="button" value="开/关灯" id="btn">
+  <script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+
+    my$("btn").onclick = function () {
+      document.body.className = document.body.className != "black" ? "black" : "";
+    } 
+  </script>-->
+
+  <!-- <input type="button" value="禁用文本框" id="btn">
+  <input type="text" value="文本框" id="txt">
+  <script>
+    //禁用文本框
+    document.getElementById("btn").onclick = function () {
+      document.getElementById("txt").disabled = true;
+    };
+  </script> -->
+
+  <!-- 组织超链接的默认跳转：return false; -->
+  <!-- <a href="http://www.baidu.com" onclick="alert('哎呀，我被点了'); return false;"> -->
+
+  <!-- <style>
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+  </style>
+  <ul id="uu">
+    <li>宝马</li>
+    <li>宝马</li>
+    <li>宝马</li>
+    <li>宝马</li>
+    <li>宝马</li>
+    <li>宝马</li>
+  </ul>
+  <script src="common.js"></script>
+  <script>
+    var list=document.getElementsByTagName("li");
+    for(var i=0;i<list.length;i++){
+      list[i].onmouseover = function(){
+        this.style.backgroundColor="red";
+      }
+      list[i].onmouseout=function(){
+        this.style.backgroundColor="";
+      }
+    }
+  </script> -->
+
+  <!-- <style>
+    div {
+      width: 200px;
+      height: 100px;
+      background-color: #ccc;
+      float: left;
+      margin-left: 10px;
+      border: 2px solid #ccc;
+    }
+  </style>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <script src="common.js"></script>
+  <script>
+    var objs = document.getElementsByTagName("div");
+    for (var i=0;i<objs.length;i++){
+      objs[i].onmouseover=function(){
+        this.style.border="2px solid red";
+      };
+      objs[i].onmouseout=function(){
+        this.style.border="";
+      };
+    }
+  </script> -->
+
+  <!-- <style>
+    input {
+      color: gray;
+    }
+  </style>
+  <input type="text" id="txt" value="请输入内容">
+  <script src="common.js"></script>
+  <script>
+    my$("txt").onfocus=function(){
+      if(this.value=="请输入内容"){
+        this.value="";
+        this.style.color="black";
+      }
+    };
+    my$("txt").onblur=function(){
+      if(this.value.length==0){
+        this.value="请输入内容";
+        this.style.color="gray";
+      }
+    }
+  </script> -->
+
+  <!-- <script>
+    //兼容代码
+
+    //设置任意标签中间的任意文本内容
+    function setInnerText(element, text) {
+      //判断浏览器是否支持这个属性
+      if (typeof element.textContent == "undefined") { //不支持
+        element.innerText = text;
+      } else {
+        element.textContent = text;
+      }
+    }
+
+    //获取任意标签中间的文本内容
+    function getInnerText(element) {
+      //判断浏览器是否支持这个属性
+      if (typeof element.textContent == "undefined") {
+        return element.innerText;
+      } else {
+        return element.textContent;
+      }
+    }
+  </script> -->
+
+  <!-- <style>
+    li {
+      list-style: none;
+      margin: 10px 0;
+    }
+  </style>
+  <ul>
+    <li score="10">王二</li>
+    <li score="20">张三</li>
+    <li score="30">李四</li>
+    <li score="40">老五</li>
+  </ul>
+  <script>
+    // html标签中没有什么自带的属性可以存储成绩的
+    // 本身html标签没有这个属性，自己添加的---自定义属性---为了存储一些数据
+
+    // 在html标签中添加自定义属性，如果想要获取这个属性的值，
+    // 需要使用getAttribute("自定义属性的名字")才能获取这个属性的值
+
+    // 获取所有的li标签
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      list[i].onclick = function () {
+        // alert(this.score); //undefined
+
+        alert(this.getAttribute("score")); // 可以
+      }
+    }
+  </script> -->
+
+  <!-- <ul>
+    <li>王二</li>
+    <li>张三</li>
+    <li>李四</li>
+    <li>老五</li>
+  </ul>
+  <script>
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      // 为每个li添加自定义属性
+      // list[i].score = (i + 1) * 10;// 此方式，自定义属性在DOM对象上，不在标签中
+      list[i].setAttribute("score", (i + 1) * 10);
+    }
+  </script> -->
+
+  <!-- <style>
+    div {
+      width: 200px;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    .cls {
+      background-color: green;
+    }
+  </style>
+  <input type="button" value="移除自定义属性" id="btn" />
+  <div id="dv" score="10" class="cls"></div>
+  <script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+    // 点击按钮移除元素的自定义属性
+    my$("btn").onclick = function () {
+      // my$("dv").removeAttribute("score");
+      // 移除元素的样式
+      // 值没有了，但是属性还是有的
+      // my$("dv").className = "";
+      // 也可以移除元素的自带属性
+      my$("dv").removeAttribute("class");
+    }
+  </script> -->
+
+  <style>
+    li {
+      list-style-type: none;
+      display: none;
+    }
+
+    .box {
+      width: 415px;
+      height: 265px;
+      margin: 100px auto;
+      border: 1px solid #aaa;
+      cursor: pointer;
+    }
+
+    .hd {
+      width: 415px;
+      height: 50px;
+      background-color: #aaa;
+    }
+
+    .bd {
+      width: 415px;
+      height: 215px;
+      line-height: 215px;
+      background-color: red;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: green;
+    }
+
+    .current {
+      background-color: pink;
+    }
+
+    li.current {
+      display: block;
+    }
+  </style>
+  <div class="box" id="box">
+    <div class="hd">
+      <span class="current">体育</span>
+      <span>娱乐</span>
+      <span>新闻</span>
+      <span>综合</span>
+    </div>
+    <div class="bd">
+      <li class="current">我是体育模块</li>
+      <li>我是娱乐模块</li>
+      <li>我是新闻模块</li>
+      <li>我是综合模块</li>
+    </div>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    var box = my$("box");
+    var hd = box.getElementsByTagName("div")[0];
+    var bd = box.getElementsByTagName("div")[1];
+
+    //获取所有的span标签
+    var spanObjs = hd.getElementsByTagName("span");
+    // 获取所有的li标签
+    var liObjs = bd.getElementsByTagName("li");
+
+    for (var i = 0; i < spanObjs.length; i++) {
+      //再点击之前就把索引存在span标签中
+      spanObjs[i].setAttribute("index", i);
+      //添加点击事件
+      spanObjs[i].onclick = function () {
+        //把所有的span样式全部除掉
+        for (var j = 0; j < spanObjs.length; j++) {
+          spanObjs[j].removeAttribute("class");
+        }
+        //给当前点击的span添加属性
+        this.className = "current";
+        //获取索引值
+        var num = this.getAttribute("index");
+        for (var k = 0; k < liObjs.length; k++) {
+          // 把所有的样式全部抹掉
+          liObjs[k].removeAttribute("class");
+
+          //当前被点击的li标签显示内容
+          liObjs[num].className = "current";
+        }
+      }
+
+    }
+  </script>
+
+
+
+</body>
+
+</html>

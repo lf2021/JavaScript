@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>arr3</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var arr = ['a', 'b', 'c', 'd', 'e'];
+    for (var i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+    var arr1 = [];
+    arr1[12] = 'x';
+    arr1[23] = 'y';
+    arr1[45] = 'z';
+    for (var i in arr1) {
+      console.log(i);
+    }
+    for (var i in arr1) {
+      if (arr1.hasOwnProperty(i)) {
+        console.log(i);
+      }
+    }
+
+    var arr2 = [1, 2, 3, 4, 5, 6];
+    arr2.forEach(function (x) {
+      console.log(x);
+    });
+
+    function Test(element, index, array) {
+      console.log('要处理的数组为：' + array);
+      console.log('索引：' + index + '--值为：' + element);
+    }
+    arr2.forEach(Test);
+  </script>
+</body>
+
+</html>

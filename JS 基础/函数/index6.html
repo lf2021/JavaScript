@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // function cheng2(a,b,c) {
+            //     var i=0,arr=[];
+            //     for (i=0;i<3;i++){
+            //         arr[i]=arguments[i]*2;
+            //     }
+            //     return arr;
+            // }
+            // // alert(cheng2(1,25,6));
+            // function jia1(a) {
+            //
+            //     return a+1;
+            // }
+            // var arr1=[];
+            // arr1=cheng2(10,20,30);
+            // for (var i=0;i<arr1.length;i++){
+            //     arr1[i]=jia1(arr1[i]);
+            // }
+            // alert(arr1);
+
+            function addOne(a) {
+                return a+1;
+            }
+            function test(a,b,c,callback) {
+                var i,arr=[];
+                for (i=0;i<3;i++){
+                    arr[i]=callback(arguments[i]*2);
+                }
+                return arr;
+            }
+            // alert(test(5,7,9,addOne));
+            alert(test(5,6,7,function(a){return a+2;}))
+        </script>
+    </body>
+</html>

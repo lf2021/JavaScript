@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //逗号表达式的例子
+            var a,b,c,d;
+            var i=1,j=2,k=3;
+            var z=(m=1,n=2,p=3);//z的值等于最后一个表达式的值
+            // alert(z+'\n'+m+'\n'+n+'\n'+p);
+
+            //void运算符
+            // z=void(n=1,m=2,p=3);
+            // alert(z)//undefined
+
+            //typeof返回变量的类型
+            var x;
+            x=123;
+            x='true';
+            x=true;
+            x=null;//object
+            x=undefined;
+            x=[1,2,3];//object
+            alert(typeof x);
+
+        </script>
+    </body>
+</html>

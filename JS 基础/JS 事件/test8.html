@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <input type="button" value="test1" id='btn1' />
+        <script type="text/javascript">
+            var btn1=document.getElementById("btn1");
+            //   btn1.onclick=function(event){
+            //    alert(event.type);
+            //   }
+            btn1.addEventListener('click',function(e){
+        //    alert(e.type);
+        //    alert(this.tagName);
+                alert(e.currentTarget);
+                alert(this===e.currentTarget);
+                alert(e.target);
+                alert(this===e.target);
+            },false)
+            document.body.onclick=function(event){
+                alert(event.currentTarget===this);
+                alert(event.target===document.getElementById('btn1'));
+                alert(document.body===this);
+            }
+        </script>
+    </body>
+</html>

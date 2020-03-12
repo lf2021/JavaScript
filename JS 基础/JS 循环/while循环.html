@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+            while(exp){
+                循环体
+            }
+            do{
+                循环体
+            }while(exp)
+            */
+
+            var i=1;
+            while (i<=10){
+                document.write(i+'<br/>');
+                i++;
+            }
+            document.write(i);
+            document.write('<hr>');
+            while (false){
+                document.write('hello world');
+            }
+            document.write('<br/>...continue...<br/>')
+            do {
+                document.write('hello maizi');
+            }while (false);
+            document.write('<hr/>');
+        //    do...while循环至少执行一次，即便条件为 false，因为代码块是在条件语句判断前执行
+
+
+
+        //    break:可以结束while和do...while
+            i=0;
+            while (i>=0){
+                if (i>10){
+                    break;
+                }
+                document.write(i);
+                document.write('<br/>');
+                i++;
+            }
+            document.write('<hr/>');
+
+            i=1;
+            while (i<=10){
+                if (i==3){
+                    // break;
+                    i++;
+                    continue;
+                }
+                document.write(i+'<br/>');
+                i++;
+            }
+        </script>
+    </body>
+</html>

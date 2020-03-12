@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var obj={};
+            // obj.x=1;
+            // obj.y=2;
+            // obj.x=123;
+            // obj.y=4566;
+            // console.log(obj.x+'\n'+obj.y);
+            // for (var p in obj){
+            //     console.log(p);
+            // }
+            // console.log(Object.keys(obj));
+            // console.log(Object.getOwnPropertyNames(obj));
+
+
+            Object.defineProperty(obj,'x',{
+                value:12,
+            });
+            console.log(obj.x);
+            obj.x=456;
+            console.log(obj.x);//值不变,12
+            for (var i in obj){
+                console.log('对象中的属性'+i);//属性不可显示
+            }
+            console.log(Object.keys(obj));//显示空数组[]
+            console.log(Object.getOwnPropertyNames(obj));//["x"]
+
+
+            Object.defineProperty(obj,'y',{
+                value:56,
+                writable:true,//代表是否可写
+                enumerable:true,//是否可枚举
+                configurable:false,//是否可配置
+            });
+            console.log(obj.y);
+            obj.y=777;
+            console.log(obj.y);
+            for (p in obj){
+                console.log(p);
+            }
+            console.log(Object.keys(obj));
+            console.log(Object.getOwnPropertyNames(obj));
+
+
+            Object.defineProperty(obj,'z',{
+                value:'this is a test',
+                writable:true,
+                enumerable:true,
+                configurable:true,
+            });
+            console.log(obj.z);
+            obj.z='hello';
+            console.log(obj.z);
+
+
+            Object.defineProperty(obj,'k',{
+                value:1,
+                writable:false,
+                enumerable:false,
+                configurable:true,
+            });
+            console.log(obj.k);//1
+            obj.k=3;
+            console.log(obj.k);//1
+            Object.defineProperty(obj,'k',{
+                writable:true,
+            });
+            obj.k=5;
+            console.log(obj.k);
+        </script>
+    </body>
+</html>

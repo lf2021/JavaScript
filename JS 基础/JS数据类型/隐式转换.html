@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>隐式转换的例子</title>
+    </head>
+    <script type="text/javascript">
+        //typeof得到变量的类型
+        //alert(typeof a);
+        var a;//undefined->false
+        a=null;//null->false
+        a=0;
+        a=0.0;
+        a=0/0;//NaN->false
+        // alert(typeof a);
+        a='';//空字符串->false
+        a='0';//真
+        a=' ';//真
+        // alert(typeof a);
+        // if(a){
+        //     alert('真')
+        // }
+        // else {
+        //     alert('假')
+        // }
+        //其他类型转换成数值型
+        var b=undefined;//undefined->NaN
+        b = null;//null->0
+        b = true;//true->1
+        b = false;//false->0
+        b = '12';//字符串拼接
+        // alert(1+b);
+        var c='12';//'12'->12
+        c='3king';//'3king'->NaN
+        c='true';//'true'->NaN
+        // alert(2*c);
+        c='33';
+        // alert(typeof c);
+        // c=c*1;
+        // alert(typeof c);//字符串行转换成数字型
+
+    </script>
+    <body>
+    <h1>隐式转换的例子</h1>
+    <script type="text/javascript">
+//其他类型转换成字符串型
+        document.write(undefined);//'undefined'
+        document.write('<br/>');
+        document.write(null);//'null'
+        document.write('<br/>');
+        document.write(NaN);//'NaN'
+        document.write('<br/>');
+        document.write(123);//'123'
+        document.write('<br/>');
+        document.write(true);//'true'
+        document.write('<br/>');
+        document.write(false);//'false'
+        alert(1+"1");
+        alert(2+'12');//字符串的拼接操作
+    </script>
+
+    </body>
+</html>

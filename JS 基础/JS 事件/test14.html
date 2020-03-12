@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="EventUtil.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <!--<p><img src="1.gif" alt="" onload='alert("image loaded")' /></p>-->
+        <p><img src="山.jpg" alt="" id='img'/></p>
+        <script type="text/javascript">
+            var img=document.getElementById("img");
+            EventUtil.addHandler(img,'load',function(event){
+                event=EventUtil.getEvent(event);
+                alert(EventUtil.getTarget(event).src);
+            });
+        </script>
+    </body>
+</html>

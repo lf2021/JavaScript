@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+    <script type="text/javascript">
+        var a=12;
+        a=-23;
+        a=.222e33;
+        a=-1.3e3;
+        a=3.E-2;
+        a=12e+20;
+
+        a=0xAB12;//十六进制
+
+        a=0o0;
+        a=0o123;
+        a=0o241234;//八进制
+
+        a=1.79e310;//正无穷大Infinity
+        a=-1.79e310;//负无穷大-Infinity
+
+        a=0/0;//NaN:not a number
+        // alert(a);
+        //通过isNaN()来检测是否是NaN值
+
+        // alert(isNaN(a));
+        //NaN不能和自身比较
+        // alert(NaN==NaN)
+
+        //转义符：
+        //  \n   ->   回车换行
+        //  \r   ->   换行
+        //  \t   ->   水平制表符
+        //  \"   ->   "
+        //  \'   ->   '
+        //  \\   ->   \
+        var str = 'this is a test';
+        var str1="hello world";
+        var username="king's";
+        var usernaem ='king\'s';
+        // alert(username);
+        var str2='a\nb\rc\td"e\\f';
+        // alert(str2);
+
+        //布尔类型严格区分大小写
+        var married = true;
+        // married=TRUE;
+        // alert(married);
+
+
+//声明变量未赋值
+        var test6;
+        // alert(test6);
+//赋值为不存在的属性值
+        var test7=String.NotExists;
+        // alert(test7);
+//null空值
+        var test8=null;
+        alert(test8);
+        alert(null===undefined);//两个等号判断值是否相等，三个等号判断类型是否相等
+    </script>
+    </body>
+</html>

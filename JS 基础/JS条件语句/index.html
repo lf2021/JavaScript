@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            if(true){
+                document.write('hello');
+                document.write('King');
+                var x=1,y=2,username='king';
+            }
+            document.write('<hr color="red">');
+            document.write(x+'--'+y+'--'+username);
+            //if...else
+            document.write('<hr color="red">');
+            if(username=='king'){
+                document.write('hello king');
+            }else{
+                document.write('hello maizi');
+            }
+            document.write('<hr color="red">');
+            //if...else if
+            username='admin'
+            if(username=='king'){
+                document.write('hello king');
+            }else if(username=='maizi'){
+                document.write('hello maizi');
+            }else if(username='admin'){
+                document.write('hello admin')
+            }
+            document.write('<hr color="red">');
+            var x=11;
+            if(x==1){
+                document.write('aaa')
+            }else if(x==2){
+                document.write('bbb');
+            }else if(x==3){
+                document.write('ccc');
+            }else{
+                document.write('以上表达式都为false执行的代码段');
+            }
+            document.write('<hr color="red">');
+            //switch...case语句
+            /*
+            switch(exp){
+            case 值1:
+            执行的代码段;
+            break;
+            case 值2:
+            执行的代码段;
+            break;
+            ...
+            default:
+            执行的代码段;
+            break;
+            严格类型比较
+            }
+            */
+            var x=10;
+            switch (x) {
+                case 1:
+                    document.write('aa');
+                    break;
+                case 2:
+                    document.write('bb');
+                    break;
+                default:
+                    document.write('以上case都没有匹配到的时候执行的代码段');
+                    break;
+                case 3:
+                    document.write('cc');
+                    break;
+                case 4:
+                    document.write('dd');
+            }
+            document.write('<br/>continue...');
+            document.write('<hr color="red">');
+        </script>
+    </body>
+</html>

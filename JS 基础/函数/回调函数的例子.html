@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function calc(x,y) {
+                return x()+y();
+            }
+            function test1() {
+                return 3;
+            }
+            function test2() {
+                return 5;
+            }
+            // alert(calc(test1,test2));
+            alert(calc(function(){return 5;},function(){return 10;}));
+        </script>
+    </body>
+</html>

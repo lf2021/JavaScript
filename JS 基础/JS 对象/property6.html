@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var obj={};
+            Object.defineProperty(obj,'x',{
+                get : function () {
+                    return 123;
+                }
+            });
+            console.log(obj.x);
+        </script>
+    </body>
+</html>

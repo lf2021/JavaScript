@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var o={x:1};
+            // console.log('x' in o);//true
+            // console.log(o.hasOwnProperty('x'));//true
+
+            function Foo(){};
+            Foo.prototype.z=3;
+            var obj = new Foo();
+            obj.x=1;
+            obj.y=2;
+            console.log('x' in obj);//true
+            console.log(obj.hasOwnProperty('x'));//true
+            console.log(obj.propertyIsEnumerable('x'));//true
+            console.log('z' in obj);//true
+            console.log(obj.hasOwnProperty('z'));//false
+            //propertyIsEnumerable属性是对象自己的并且是可枚举的返回true
+            console.log(obj.propertyIsEnumerable('z'));//false
+            console.log(obj.k!==undefined);//false
+            console.log(obj.x!==undefined);//true
+            console.log(obj.toString()!==undefined);//true
+            console.log(Object.prototype.propertyIsEnumerable('toString'));//false不可枚举
+
+            var obj={
+                x:1,
+                y:2,
+                z:3,
+                username:'king',
+                age:12,
+                addr:'北京',
+            };
+            for (var i in obj){
+                console.log(i);
+            }
+
+            //返回所有自由属性的名称
+            console.log(Object.getOwnPropertyNames(obj));
+
+            console.log(Object.keys(obj));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // var obj={};
+            // console.log(obj.toString());
+            // var arr=new Array();
+            // console.log(arr.toString());
+            // console.log(Object.prototype.toString.call(arr));
+            // var d=new Date();
+            // console.log(Object.prototype.toString.call(d));
+            function classof(obj){
+                if(obj===null){
+                    return 'NUll';
+                }
+                if(obj===undefined){
+                    return 'Undefined';
+                }
+                return Object.prototype.toString.call(obj).slice(8,-1);
+            }
+            var x=null;
+            x=undefined;
+            x=123;
+            x=12.3;
+            x='king';
+            x=true;
+            x=[];
+            x=window;
+            x=function(){};
+            function f(){};
+            x=new f();
+            console.log(classof(x));
+        </script>
+    </body>
+</html>

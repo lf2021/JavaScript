@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>error对象</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // try{
+            //     notExists();
+            // }catch (e) {
+            //     alert(e.name+':'+e.message);
+            // }
+            // alert('this is a test');
+
+            // try{
+            //     var n=2;
+            //     // n=0;
+            //     if (n==0){
+            //         throw new Error('0不能当作除数');
+            //     }else{
+            //         alert(4/n);
+            //     }
+            // }catch (e) {
+            //     alert(e.name+':'+e.message);
+            // }finally {
+            //     alert('我总是被调用');
+            // }
+
+
+            // try{
+            //     notExists();
+            // }catch (e) {
+            //     if (e instanceof EvalError){
+            //         alert('Eval错误'+e.message);
+            //     }else if (e instanceof RangeError){
+            //         alert('Range错误'+e.message);
+            //     }else if (e instanceof TypeError){
+            //         alert('Type错误'+e.message);
+            //     }else if (e instanceof ReferenceError){
+            //         alert('Reference错误'+e.message);
+            //     }else {
+            //         alert('其他错误');
+            //     }
+            // }finally {
+            //
+            // }
+
+            function MyError(msg) {
+                this.name='MyError';
+                this.message=msg||'默认的自定义的错误信息';
+            }
+            MyError.prototype=Object.create(Error.prototype);
+            MyError.prototype.constructor=MyError;
+            try{
+                throw new MyError();
+            }catch (e) {
+                console.log(e.name+':'+e.message);
+            }
+
+            try{
+                throw new Error('测试自定义的错误信息');
+            }catch (e) {
+                console.log(e.name+':'+e.message);
+            }
+        </script>
+    </body>
+</html>

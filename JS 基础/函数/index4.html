@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //全局函数的例子
+            document.write(parseInt('34')+'<br>');
+            document.write(parseInt('1king')+'<br>');
+            document.write(parseInt('maizi')+'<br>');
+            document.write(parseInt('11 22 33 44')+'<br>');
+            document.write(parseInt('F')+'<br>');
+            document.write(parseInt('F',16)+'<br>');
+            document.write(parseInt('17',8)+'<br>');
+            document.write(parseInt('0xfff')+'<br>');
+            document.write('<hr>');
+
+            document.write('转换成二进制的结果<br/>');
+            document.write(parseInt('32',2)+'<br>');
+            document.write(parseInt('032',2)+'<br>');
+            document.write(parseInt('0x32',2)+'<br>');
+            document.write('<hr>');
+
+            document.write('转换成八进制的结果<br/>');
+            document.write(parseInt('32',8)+'<br>');
+            document.write(parseInt('032',8)+'<br>');
+            document.write(parseInt('0x32',8)+'<br>');
+            document.write('<hr>');
+
+            document.write('二进制转换成其他进制<br/>');
+            document.write(parseInt('11001010',2)+'<br>');
+            document.write(parseInt('11001010',8)+'<br>');
+            document.write(parseInt('11001010',10)+'<br>');
+            document.write(parseInt('11001010',16)+'<br>');
+            document.write(parseInt('202',2)+'<br>');
+            document.write('<hr>');
+
+            //将字符串转换成浮点型
+            document.write('转换成浮点型<br/>');
+            document.write(parseFloat('2.6')+'<br>');
+            document.write(parseFloat('322')+'<br>');
+            document.write(parseFloat('2e2')+'<br>');
+            document.write(parseFloat('123abc')+'<br>');
+            document.write(parseFloat(' 2.6 ')+'<br>');//可以忽略空格
+            document.write(parseFloat('a2.6')+'<br>');
+
+            //通过isFinite()检测是否是无穷值
+            var x=123;
+            x = Infinity;
+            x = -Infinity;
+            x = 0/0;
+            x = 0;
+            x = false;
+            // alert(isFinite(x));
+            x = NaN;
+            x = 123;
+            x = false;
+            x = parseInt('king3');
+            alert(isNaN(x));
+        </script>
+    </body>
+</html>

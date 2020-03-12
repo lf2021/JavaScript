@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript">
+            //逻辑与：&&
+            //要求两个表达式为true，结果才是true
+            // alert(true && true);
+            // alert(false && true);
+            // alert(true && false);
+            // alert(false && false);
+            //如果第一个表达式为false，整个结果为false，就把第二个表达式短路了
+            /*
+            var i=0,j=1;
+            if(i-- && j++) {
+                document.write('hello');
+            }else {
+                document.write('world');
+            }
+            alert(i);
+            alert(j);
+            */
+
+            //逻辑或：||
+            //两个表达中有一个为true，整个结果为true
+            //   alert(true || true);
+            //   alert(true || false);
+            //   alert(false || true);
+            //   alert(false || false);
+            //如果第一个表达式为true，整个结果为true，把第二个表达式短路了
+            /*
+            i=1;
+            j=0;
+            if(i-- || ++j){//1->true
+                document.write('aa');
+            }
+            else{
+                document.write('bb');
+            }
+            alert(i);
+            alert(j);
+            */
+
+            //逻辑非：!
+            //取反的作用
+            alert(!true);
+            alert(!false);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

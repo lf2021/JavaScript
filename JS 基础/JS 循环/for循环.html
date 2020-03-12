@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+            for(exp1;exp2;exp3){
+                循环体;
+            }
+            exp1:无条件的执行的第一个表达式
+            exp2:是判断是否能执行循环体的条件
+            exp3:做增量的操作
+            */
+
+            /*
+            for(var i=1;i<=10;++i){
+                document.write('hello maizi<br/>');
+            }
+            document.write(i);
+            document.write('<hr/>');
+            */
+
+            /*
+            //循环输出0-100
+            for(var i=0;i<=100;i++){
+                document.write(i+'<br/>');
+            }
+            document.write('i='+i)
+            document.write('<hr color="red">');
+
+
+            //循环输出100-0
+            for(var i=100;i>=0;i--){
+                document.write(i+'<br/>')
+            }
+            document.write('<hr color="red">');
+
+
+            //循环1-100之间的奇数
+            for(var i=1;i<=100;i++){
+                if(i%2==1){
+                    document.write(i+'<br/>');
+                }
+            }
+
+
+            document.write('<hr color="red">');
+            for(var i=1;i<=100;i+2){
+                document.write(i+'<br/>');
+            }
+             */
+
+            /*//循环输出1-100之间数字的和
+            var sum=0;
+            for(var i=1;i<=100;i++){
+                sum + =i;
+            }
+            document.write(sum);*/
+
+
+            //求1-100之间奇数的和
+            var sum=0;
+            for (var i=1;i<=100;i+=2){
+                sum += i;
+            }
+            document.write('1-100奇数的和为'+sum+'<hr>');
+
+
+
+            //求1-100之间偶数的和
+            var sum=0;
+            for (var i=2;i<=100;i+=2){
+                sum += i;
+            }
+            document.write('1-100偶数的和为'+sum+'<hr>');
+
+
+            /*通过break结束for循环*/
+            for (var i=0;i>=0;i++){
+                if(i>100){
+                    break;
+                }
+                document.write(i+'<br/>');
+            }
+            document.write('<hr>');
+            /*continue:代表跳过当次循环，进入下次循环*/
+            for (var i=1;i<=10;i++){
+                if (i==3){
+                    // break;
+                    continue;
+                }
+                document.write(i+'<br>');
+            }
+        </script>
+    </body>
+</html>

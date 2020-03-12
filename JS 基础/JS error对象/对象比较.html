@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>对象比较</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var obj1={x:1};
+            var obj2={x:1};
+            console.log(obj1==obj2);//false
+            var o1={x:1};
+            var o2=o1;//o1 o2指向同一个对象
+            o2.x=123;
+            console.log(o2.x);
+            console.log(o1.x);
+            function f(o) {
+                o.x=55;
+            }
+            f(o1);
+            console.log(o2.x);
+            console.log(o1===o2);//true 这是同一个对象
+        </script>
+    </body>
+</html>

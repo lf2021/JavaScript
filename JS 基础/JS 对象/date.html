@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var d=new Date();
+            console.log(d);
+            var d=new Date(1555781234567);
+            console.log(d);
+            var d=new Date(2015,10,3);
+            console.log(d);
+            var d=new Date(15,0);
+            console.log(d);
+            var d=new Date(2015,14,3);
+            console.log(d);
+            console.log(Date.now());
+            var d=new Date(1566646837108);
+            console.log(d);
+            console.log(Date.parse('Sat Aug 24 2019 19:40:37 GMT+0800 (中国标准时间)'));
+            console.log(Date.parse('Aug 24,2019'));
+            console.log(Date.UTC(2019,8,24,0,0,0));
+            var d=new Date('2019-08-24 19:44:23');
+            console.log(d.getDate());
+            console.log(d.getDay());
+            console.log(d.getFullYear());
+            console.log(d.getMonth());
+            console.log(d.getMinutes());
+            console.log(d.getHours());
+            console.log(d.getMilliseconds());
+            console.log(d.getTime());
+            d.setDate('11');
+            console.log(d);
+            d.setFullYear('2020');
+            console.log(d);
+            d.setHours('15');
+            d.setMinutes('46');
+            d.setSeconds('55');
+            console.log(d);
+            d.setTime(1221321312312);
+            console.log(d.getTime());
+            console.log(d.toString());
+            console.log(d.valueOf());
+            console.log(d.toJSON());
+            d=new Date('2008-09-13T15:55:12.312Z');
+            console.log(d);
+        </script>
+    </body>
+</html>
