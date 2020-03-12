@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style-type: none;
+      display: none;
+    }
+
+    .box {
+      width: 415px;
+      height: 265px;
+      margin: 100px auto;
+      border: 1px solid #aaa;
+      cursor: pointer;
+    }
+
+    .hd {
+      width: 415px;
+      height: 50px;
+      background-color: #aaa;
+    }
+
+    .bd {
+      width: 415px;
+      height: 215px;
+      line-height: 215px;
+      background-color: red;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      background-color: green;
+    }
+
+    .current {
+      background-color: pink;
+    }
+
+    li.current {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <div class="hd">
+      <span class="current">体育</span>
+      <span>娱乐</span>
+      <span>新闻</span>
+      <span>综合</span>
+    </div>
+    <div class="bd">
+      <li class="current">我是体育模块</li>
+      <li>我是娱乐模块</li>
+      <li>我是新闻模块</li>
+      <li>我是综合模块</li>
+    </div>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    var box = my$("box");
+    var hd = box.getElementsByTagName("div")[0];
+    var bd = box.getElementsByTagName("div")[1];
+
+    //获取所有的span标签
+    var spanObjs = hd.getElementsByTagName("span");
+    // 获取所有的li标签
+    var liObjs = bd.getElementsByTagName("li");
+
+    for (var i = 0; i < spanObjs.length; i++) {
+      //再点击之前就把索引存在span标签中
+      spanObjs[i].setAttribute("index", i);
+      //添加点击事件
+      spanObjs[i].onclick = function () {
+        //把所有的span样式全部除掉
+        for (var j = 0; j < spanObjs.length; j++) {
+          spanObjs[j].removeAttribute("class");
+        }
+        //给当前点击的span添加属性
+        this.className = "current";
+        //获取索引值
+        var num = this.getAttribute("index");
+        for (var k = 0; k < liObjs.length; k++) {
+          // 把所有的样式全部抹掉
+          liObjs[k].removeAttribute("class");
+
+          //当前被点击的li标签显示内容
+          liObjs[num].className = "current";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

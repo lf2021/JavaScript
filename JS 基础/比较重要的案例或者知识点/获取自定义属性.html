@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li score="10">王二</li>
+    <li score="20">张三</li>
+    <li score="30">李四</li>
+    <li score="40">老五</li>
+  </ul>
+  <script>
+    // html标签中没有什么自带的属性可以存储成绩的
+    // 本身html标签没有这个属性，自己添加的---自定义属性---为了存储一些数据
+  
+    // 在html标签中添加自定义属性，如果想要获取这个属性的值，
+    // 需要使用getAttribute("自定义属性的名字")才能获取这个属性的值
+  
+    // 获取所有的li标签
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      list[i].onclick = function () {
+        // alert(this.score); // undefined
+  
+        alert(this.getAttribute("score")); // 可以
+      }
+    }
+  </script>
+</body>
+</html>

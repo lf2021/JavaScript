@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>王二</li>
+    <li>张三</li>
+    <li>李四</li>
+    <li>老五</li>
+  </ul>
+  <script>
+    var list = document.getElementsByTagName("li");
+    for (var i = 0; i < list.length; i++) {
+      // 为每个li添加自定义属性
+      // list[i].score = (i + 1) * 10;// 此方式，自定义属性在DOM对象上，不在标签中
+      list[i].setAttribute("score", (i + 1) * 10);
+    }
+  </script>
+</body>
+</html>
