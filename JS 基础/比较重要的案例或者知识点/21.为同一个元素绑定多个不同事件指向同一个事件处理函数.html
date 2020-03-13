@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="小凡" id="btn">
+  <script src="common.js"></script>
+  <script>
+    my$("btn").onclick = f1;
+    my$("btn").onmouseover = f1;
+    my$("btn").onmouseout = f1;
+
+    function f1(e) {
+      switch (e.type) {
+        case "click":
+          alert("小凡好帅");
+          break;
+        case "mouseover":
+          this.style.backgroundColor = "red";
+          break;
+        case "mouseout":
+          this.style.backgroundColor = "green";
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

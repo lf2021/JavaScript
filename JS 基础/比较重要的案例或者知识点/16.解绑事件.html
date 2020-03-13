@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="小凡" id="btn">
+  <input type="button" value="干掉第一个按钮的事件" id="btn2">
+
+  <script src="common.js"></script>
+  <script>
+    // my$("btn").onclick = function () {
+    //   console.log("小凡真帅");
+    // };
+    // my$("btn2").onclick = function () {
+    //   my$("btn").onclick = null;
+    // };
+
+    function f1() {
+      console.log("第一次");
+    }
+
+    function f2() {
+      console.log("第二次");
+    }
+
+    my$("btn").addEventListener("click", f1, false);
+
+    my$("btn").addEventListener("click", f2, false);
+
+    // 点击第二个按钮把第一个按钮的第一个点击事件解绑
+    my$("btn2").onclick = function () {
+      // 解绑事件的时候，需要在绑定事件的时候，使用命名函数
+      my$("btn").removeEventListener("click", f1,  false);
+    }
+  </script>
+</body>
+
+</html>

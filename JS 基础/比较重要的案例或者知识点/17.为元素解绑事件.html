@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+</head>
+<body>
+<input type="button" value="小苏" id="btn"/>
+<input type="button" value="干掉第一个按钮的事件" id="btn2"/>
+<script src="common.js"></script>
+<script>
+  //1 对象.on事件名字=事件处理函数----绑定事件
+//  my$("btn").onclick=function () {
+//    console.log("我猥琐");
+//  };
+//  my$("btn2").onclick=function () {
+//    //1.解绑事件
+//    my$("btn").onclick=null;
+//  };
+
+//  function f1() {
+//    console.log("第一个");
+//  }
+//  function f2() {
+//    console.log("第二个");
+//  }
+//  my$("btn").addEventListener("click",f1,false);
+//  my$("btn").addEventListener("click",f2,false);
+//
+//  //点击第二个按钮把第一个按钮的第一个点击事件解绑
+//  my$("btn2").onclick=function () {
+//    //解绑事件的时候,需要在绑定事件的时候,使用命名函数
+//    my$("btn").removeEventListener("click",f1,false);
+//  };
+
+
+  function f1() {
+    console.log("第一个");
+  }
+  function f2() {
+    console.log("第二个");
+  }
+  my$("btn").attachEvent("onclick",f1);
+  my$("btn").attachEvent("onclick",f2);
+
+  my$("btn2").onclick=function () {
+      my$("btn").detachEvent("onclick",f1);
+  };
+
+
+
+  //解绑事件:
+  /*
+  * 注意:用什么方式绑定事件,就应该用对应的方式解绑事件
+  * 1.解绑事件
+  * 对象.on事件名字=事件处理函数--->绑定事件
+  * 对象.on事件名字=null;
+  * 2.解绑事件
+  * 对象.addEventListener("没有on的事件类型",命名函数,false);---绑定事件
+  * 对象.removeEventListener("没有on的事件类型",函数名字,false);
+  * 3.解绑事件
+  * 对象.attachEvent("on事件类型",命名函数);---绑定事件
+  * 对象.detachEvent("on事件类型",函数名字);
+  *
+  *
+  * */
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    #dv1 {
+      width: 300px;
+      height: 200px;
+      background-color: red;
+    }
+
+    #dv2 {
+      width: 250px;
+      height: 150px;
+      background-color: green;
+    }
+
+    #dv3 {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+  <script>
+    //事件冒泡:多个元素嵌套,有层次关系,这些元素都注册了相同的事件,如果里面的元素的事件触发了,外面的元素的该事件自动的触发了.
+  </script>
+</head>
+
+<body>
+  <div id="dv1">
+    <div id="dv2">
+      <div id="dv3"></div>
+    </div>
+  </div>
+
+  <script src="common.js"></script>
+  <script>
+    //事件冒泡,阻止事件冒泡,
+    //如何阻止事件冒泡: window.event.cancelBubble=true; IE特有的,谷歌支持,火狐不支持
+
+    // e.stopPropagation(); 谷歌和火狐支持,
+
+    my$("dv1").onclick = function () {
+      console.log(this.id);
+    };
+    my$("dv2").onclick = function () {
+      console.log(this.id);
+      // window.event.cancelBubble=true;
+    };
+    //事件处理参数对象
+    my$("dv3").onclick = function (e) {
+      console.log(this.id);
+      //阻止事件冒泡
+      //e.stopPropagation();
+
+      console.log(e);
+    };
+
+    //  document.body.onclick=function () {
+    //      console.log("颤抖吧,你们这些愚蠢的标签");
+    //  };
+  </script>
+</body>
+
+</html>

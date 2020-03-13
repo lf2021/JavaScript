@@ -3,7 +3,7 @@ function my$(id) {
 }
 
 //设置任意元素的中间的文本内容
-function setInnnerText(element, text) {
+function setInnerText(element, text) {
   if (typeof element.textContent == "undefined") {
     element.innerText = text;
   } else {
