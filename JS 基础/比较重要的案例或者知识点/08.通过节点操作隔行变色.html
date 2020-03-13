@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="change" id="btn">
+  <div id="dv">
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+    <li>天道酬勤</li>
+  </div>
+
+  <script src="common.js"></script>
+  <script>
+    my$("btn").onclick = function () {
+      var nodes = my$("dv").childNodes;
+      var count = 0; //记录li标签的个数
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
+          nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+          count++;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

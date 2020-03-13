@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn" />
+  <script src="common.js"></script>
+  <script>
+    //为元素绑定事件(DOM):一种,但是不兼容,有两种
+    //1 对象.addEventListener("事件类型",事件处理函数,false);--谷歌和火狐支持,IE8不支持
+    //2 对象.attachEvent("有on的事件类型",事件处理函数)--谷歌不支持,火狐不支持,IE8支持
+
+    //为按钮绑定点击事件
+    //参数1:事件的类型---事件的名字,没有on
+    //参数2:事件处理函数---函数(命名函数,匿名函数)
+    //参数3:布尔类型,目前就写false
+
+    //为同一个元素绑定多个相同的事件--
+    my$("btn").addEventListener("click", function () {
+      console.log("小苏猥琐啊");
+    }, false);
+    my$("btn").addEventListener("click", function () {
+      console.log("小苏龌龊啊");
+    }, false);
+    my$("btn").addEventListener("click", function () {
+      console.log("小苏邪恶啊");
+    }, false);
+    my$("btn").addEventListener("click", function () {
+      console.log("小苏下流啊");
+    }, false);
+
+    //参数1:事件类型---事件名字，有on
+    //参数2:事件处理函数---函数(命名函数,匿名函数)
+
+    my$("btn").attachEvent("onclick", function () {
+      console.log("小杨好帅哦1");
+    });
+
+    my$("btn").attachEvent("onclick", function () {
+      console.log("小杨好帅哦2");
+    });
+
+    my$("btn").attachEvent("onclick", function () {
+      console.log("小杨好帅哦3");
+    });
+  </script>
+</body>
+
+</html>

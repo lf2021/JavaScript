@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *margin {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: url("../images/1.jpg") no-repeat 350px 0;
+    }
+
+    #mask {
+      background-color: rgba(255, 255, 255, 0.3);
+      height: 200px;
+      text-align: center;
+    }
+
+    #mask img {
+      width: 200px;
+      margin-top: 35px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body id="bd">
+  <div id="mask">
+    <img src="../images/1.jpg" alt="">
+    <img src="../images/2.jpg" alt="">
+    <img src="../images/3.jpg" alt="">
+  </div>
+  <script src="common.js"></script>
+  <script>
+    var dvObjs = my$("mask").children;
+    for (var i = 0; i < dvObjs.length; i++) {
+      dvObjs[i].onclick = function () {
+        document.body.style.backgroundImage = "url("+
+        this.src + ")";
+      }
+    }
+  </script>
+</body>
+
+</html>
