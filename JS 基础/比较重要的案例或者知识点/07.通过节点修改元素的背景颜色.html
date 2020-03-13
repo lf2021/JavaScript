@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 450px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="change" id="btn">
+  <div id="dv">
+    <span>这是span</span>
+    <p>这是p</p>
+    <span>这是span</span>
+    <p>这是p</p>
+    <span>这是span</span>
+    <p>这是p</p>
+    <a href="http://www.baidu.com">百度</a>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    my$("btn").onclick = function () {
+      var dvobj = my$("dv");
+      var nodes = dvobj.childNodes;
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].nodeType == 1 && nodes[i].nodeName == "P") {
+          nodes[i].style.backgroundColor = "red";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
