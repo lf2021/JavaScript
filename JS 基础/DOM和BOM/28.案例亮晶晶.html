@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #dv {
+      width: 400px;
+      height: 400px;
+      background-color: #000000;
+      position: relative;
+    }
+
+    p {
+      font-size: 30px;
+      color: yellow;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="亮起来" id="btn" />
+  <div id="dv"></div>
+  <script src="common.js"></script>
+  <script>
+    my$("btn").onclick = function () {
+      setInterval(function () {
+        my$("dv").innerHTML = "<p style='margin: 0;'>★</p>";
+        var x = parseInt(Math.random() * 400 + 1);
+        var y = parseInt(Math.random() * 400 + 1);
+        my$("dv").firstElementChild.style.left = x + "px";
+        my$("dv").firstElementChild.style.top = y + "px";
+
+      }, 10)
+
+    }
+  </script>
+</body>
+
+</html>

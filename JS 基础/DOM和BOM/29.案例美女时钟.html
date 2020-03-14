@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="im">
+  <script src="common.js"></script>
+  <script>
+    function f1(){
+      var dt=new Date();
+      var hour = dt.getHours();
+      // var minute = dt.getMinutes();
+      var second = dt.getSeconds();
+      hour = hour<10?"0"+hour:hour;
+      second = second<10?"0"+second:second;
+      my$("im").src = "../images/meimei/"+hour+"_"+second+".jpg";
+    }
+    f1(); // 先执行一边代码，不然定时器会在页面加载完毕后一秒才执行函数的代码，所以这里我们先执行一遍代码就不会出现卡顿一秒的问题了
+    setInterval(f1,1000)
+  </script>
+</body>
+</html>

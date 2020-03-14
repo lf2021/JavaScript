@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    #dv {
+      position: absolute;
+      left: 0;
+      top: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="摇起来" id="btn" />
+  <input type="button" value="停止" id="btn2" />
+  <div id="dv">
+    <img src="../images/boduo.jpg">
+    <img src="../images/cangjingkong.jpg">
+  </div>
+  <script src="common.js"></script>
+  <script>
+  var timeId = "";
+  var count = 0;
+  my$("btn").onclick = function () {
+    count++;
+    if (count > 1) {
+      clearInterval(timeId);
+    }
+    timeId = setInterval(function () {
+      var x = parseInt(Math.random() * 1000 + 1);
+      var y = parseInt(Math.random() * 1000 + 1);
+      my$("dv").style.left = x + "px";
+      my$("dv").style.top = y + "px";
+    }, 100)
+  }
+  // 停止事件
+  my$("btn2").onclick = function () {
+    my$("dv").style.left = "0";
+    my$("dv").style.top = "32px";
+    window.clearInterval(timeId);
+  }
+  </script>
+</body>
+
+</html>

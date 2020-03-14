@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script>
+    //对象中的属性和方法
+    //location对象
+    //console.log(window.location);
+
+    //    //地址栏上#及后面的内容
+    //    console.log(window.location.hash);
+    //    //主机名及端口号
+    //    console.log(window.location.host);
+    //    //主机名
+    //    console.log(window.location.hostname);
+    //    //文件的路径---相对路径
+    //    console.log(window.location.pathname);
+    //    //端口号
+    //    console.log(window.location.port);
+    //    //协议
+    //    console.log(window.location.protocol);
+    //    //搜索的内容
+    //    console.log(window.location.search);
+
+    onload = function () {
+      document.getElementById("btn").onclick = function () {
+        //设置跳转的页面的地址
+        // location.href = "http://www.jd.com"; //属性----------------->必须记住
+        // location.assign("http://www.jd.com");//方法
+        location.reload();//重新加载--刷新
+        //location.replace("http://www.jd.com");//没有历史记录，没有后退记录
+      };
+    };
+  </script>
+</head>
+
+<body>
+  <input type="button" value="显示效果" id="btn" />
+
+</body>
+
+</html>

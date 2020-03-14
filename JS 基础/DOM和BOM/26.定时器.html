@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="停止" id="btn" />
+  <script>
+    // 定时器
+    // 参数1：函数
+    // 参数2：事件---毫秒---2000毫秒----2秒
+    // 执行过程：页面加载完毕后，每过了2秒，执行一次代码
+    // 返回值就是定时器的id值
+    var timeId = setInterval(function () {
+      alert("hello");
+    }, 2000);
+    document.getElementById("btn").onclick = function () {
+      // 点击按钮，停止定时器
+      // 参数：要清理的定时的id值
+      window.clearInterval(timeId);
+    }
+  </script>
+</body>
+
+</html>
