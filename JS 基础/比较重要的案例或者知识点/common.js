@@ -48,9 +48,9 @@ function getLastElementChild(element) {
 //为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数
 function addEventListener(element, type, fn) {
   //判断浏览器是否支持这个方法
-  if (element.addEventListener) {
+  if (element.addEventListener) { // 针对主流浏览器，除了 IE8 及更正版本
     element.addEventListener(type, fn, false);
-  } else if (element.attachEvent) {
+  } else if (element.attachEvent) { // 针对 IE8 及更早版本
     element.attachEvent("on" + type, fn);
   } else {
     element["on" + type] = fn;
