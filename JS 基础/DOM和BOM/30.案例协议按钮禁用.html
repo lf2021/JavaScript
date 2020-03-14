@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <textarea name="" id="" cols="30" rows="10">
+    这个世界就是这么疯狂，你不同意，我就不让你注册，打钱
+  </textarea>
+  <input type="button" value="请仔细阅读协议（5）" id="btn" disabled="disabled">
+  <script src="common.js"></script>
+  <script>
+    var time=5;
+    
+    setInterval(function () {
+      time--;
+      my$("btn").value="请仔细阅读协议（"+time+"）";
+      if(time<=0){
+        my$("btn").disable=false;
+        my$("btn").value="我同意";
+      }
+    }, 1000)
+  </script>
+</body>
+</html>
