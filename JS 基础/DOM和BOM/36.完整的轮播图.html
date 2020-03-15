@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .box {
+      margin: 100px auto;
+      width: 500px;
+      height: 200px;
+      padding: 5px;
+      border: 1px solid #aaa;
+    }
+
+    .ad {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ad ul {
+      width: 1000%;
+      height: 200px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .ad ul li {
+      float: left;
+    }
+
+    .ad ol {
+      position: absolute;
+      right: 5px;
+      bottom: 10px;
+    }
+
+    .ad ol li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, .6);
+      margin-right: 4px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 10px;
+    }
+
+    .ad ol li.current {
+      background-color: orange;
+    }
+
+    .arr {
+      display: none;
+    }
+
+    .arr span {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, .3);
+      color: #ffffff;
+      font-size: 28px;
+      line-height: 40px;
+      text-align: center;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #left {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -20px;
+    }
+
+    #right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <div id="ad" class="ad">
+      <!-- 相框 -->
+      <ul>
+        <li><img src="../images/完整的轮播图/1.jpg"></li>
+        <li><img src="../images/完整的轮播图/2.jpg"></li>
+        <li><img src="../images/完整的轮播图/3.jpg"></li>
+        <li><img src="../images/完整的轮播图/4.jpg"></li>
+        <li><img src="../images/完整的轮播图/5.jpg"></li>
+      </ul>
+      <ol>
+
+      </ol>
+      <div class="arr">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+      </div>
+    </div>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    // box
+    var box = my$("box");
+    // 相框
+    var ad = my$("ad");
+    // 相框宽度
+    var imgWidth = ad.offsetWidth;
+    // ul
+    var ul = ad.children[0]
+    // ol
+    var ol = ad.children[1];
+    // arr
+    var arr = ad.children[2];
+
+    var index = 0; // ul中li储存的索引
+    //ol添加li
+    for (var i = 0; i < ul.children.length; i++) {
+      var li = document.createElement("li");
+      li.innerHTML = i + 1;
+      ol.appendChild(li);
+    }
+    // ol下的li
+    var liObjs = ol.children;
+    // 默认第一个li显示样式
+    liObjs[0].className = "current";
+    for (var i = 0; i < liObjs.length; i++) {
+      // 自定义属性存储index
+      liObjs[i].setAttribute("index", i);
+      // 注册鼠标进入事件
+      liObjs[i].onmouseover = function () {
+        // 清除所有样式
+        for (var j = 0; j < liObjs.length; j++) {
+          liObjs[j].removeAttribute("class");
+        }
+        // 当前li给定样式
+        this.className = "current";
+
+        //获取index值
+        var index = this.getAttribute("index");
+        animate(ul, -index * imgWidth);
+      }
+
+      // 鼠标离开事件
+      liObjs[i].onmouseout = function () {
+
+      }
+    }
+
+    // 自动移动
+    var timeId = setInterval(rightClickHandle, 4000);
+
+    // 鼠标进入box显示按钮
+    box.onmouseover = function () {
+      arr.style.display = "block";
+      clearInterval(timeId);
+    };
+    // 鼠标离开box隐藏按钮
+    box.onmouseout = function () {
+      arr.style.display = "none";
+      clearInterval(timeId);
+    };
+
+    // 复制ul中的第一个li到最后一个
+    ul.appendChild(ul.children[0].cloneNode(true));
+    // 点击右边按钮注册事件
+    my$("right").onclick = rightClickHandle;
+
+    function rightClickHandle() {
+      if (index == ul.children.length - 1) { //pic=5
+        index = 0;
+        ul.style.left = -index * imgWidth + "px"; // 第6个图变成第一个图
+      }
+      index++;
+      animate(ul, -index * imgWidth);
+
+      //index最大的值是5
+      if (index == ul.children.length - 1) {
+        ol.children[0].className = "current";
+        ol.children[ol.children.length - 1].className = "";
+      } else {
+        // 把ol中的所有样式去除
+        for (var i = 0; i < ol.children.length; i++) {
+          ol.children[i].className = "";
+        }
+        ol.children[index].className = "current";
+      }
+    }
+
+    // 点击左边按钮
+    my$("left").onclick = function () {
+      if (index == 0) {
+        index = ul.children.length - 1; //5
+        ul.style.left = -index * imgWidth + "px";
+      }
+      index--;
+      animate(ul, -index * imgWidth);
+      for (var i = 0; i < ol.children.length; i++) {
+        ol.children[i].className = "";
+      }
+      ol.children[index].className = "current";
+    };
+
+    function animate(element, target) {
+      clearInterval(element.timeId);
+      element.timeId = setInterval(function () {
+        //当前位置
+        var current = element.offsetLeft;
+        // 每一步
+        var step = 10;
+        step = current < target ? step : -step;
+        // 当前位置
+        current += step;
+        if (Math.abs(current - target) > Math.abs(step)) {
+          element.style.left = current + "px";
+        } else {
+          clearInterval(element.timeId);
+          element.style.left = target + "px";
+        }
+      }, 20);
+    }
+  </script>
+</body>
+
+</html>

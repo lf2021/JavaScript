@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+
+<body>
+  <style>
+    #im {
+      width: 50px;
+      height: auto;
+      position: absolute;
+    }
+  </style>
+  <img src="http://img.zcool.cn/community/018257577cf0c40000012e7ec61d99.gif" id="im">
+  <script>
+    document.onmousemove = function (e) {
+      document.getElementById("im").style.left = e.clientX + "px";
+      document.getElementById("im").style.top = e.clientY + "px";
+    }
+  </script>
+</body>
+
+</html>

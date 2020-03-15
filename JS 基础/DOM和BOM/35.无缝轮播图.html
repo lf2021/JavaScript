@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    /*取消图片底部3像素距离*/
+    .box {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      border: 1px solid red;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box ul li {
+      float: left;
+    }
+
+    .box ul {
+      width: 1500px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="screen">
+    <ul>
+      <li id="li1"><img src="../images/无缝轮播图/01.jpg" alt="" /></li>
+      <li><img src="../images/无缝轮播图/02.jpg" alt="" /></li>
+      <li><img src="../images/无缝轮播图/03.jpg" alt="" /></li>
+      <li><img src="../images/无缝轮播图/04.jpg" alt="" /></li>
+      <li><img src="../images/无缝轮播图/01.jpg" alt="" /></li>
+    </ul>
+  </div>
+  <script src="common.js"></script>
+  <script>
+    var current = 0;
+
+    function f1() {
+      current -= 10;
+      if (current < -1200) {
+        my$("screen").children[0].style.left = 0;
+        current = 0;
+      } else {
+        my$("screen").children[0].style.left = current + "px";
+      }
+    }
+    var timeId = setInterval(f1, 20);
+    my$("screen").onmouseover = function () {
+      clearInterval(timeId);
+    };
+    my$("screen").onmouseout = function () {
+      timeId = setInterval(f1, 20);
+    };
+  </script>
+
+  <script>
+    //    function f1() {
+    //        //获取当前ul的位置
+    //        var current=my$("screen").children[0].offsetLeft;
+    //        //每次移动的步数
+    //        var step=-9;
+    //        if(current<-1200){
+    //            my$("screen").children[0].style.left=0+"px";
+    //        }else{
+    //            current+=step;
+    //            my$("screen").children[0].style.left=current+"px";
+    //        }
+    //    }
+    //    var setId=setInterval(f1,20);
+    //    my$("screen").onmouseover=function () {//进入
+    //        clearInterval(setId);
+    //    };
+    //    my$("screen").onmouseout=function () {//离开
+    //        setId=setInterval(f1,20);
+    //    };
+  </script>
+</body>
+
+</html>
