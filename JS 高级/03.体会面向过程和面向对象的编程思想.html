@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn">
+  <div id="dv"></div>
+  <script src="common.js"></script>
+  <script>
+    // 面向过程
+    // document.getElementById("btn").onclick=function(){
+    //   document.getElementById("dv").style.backgroundColor="yellow";
+    // };
+
+
+    // 面向对象---初级的
+    // function ChangeStyle(btnId, dvId, color) {
+    //   this.btnObj = document.getElementById(btnId);
+    //   this.dvObj = document.getElementById(dvId);
+    //   this.color = color;
+    // }
+    ////数据共享来改变背景颜色
+    // ChangeStyle.prototype.init = function () {
+    //   var that = this;
+    //   this.btnObj.onclick = function () { //按钮
+    //     that.dvObj.style.backgroundColor = that.color;
+    //   };
+    // };
+
+    //// 实例化对象
+    // var cs = new ChangeStyle("btn", "dv", "yellow");
+    // cs.init();
+
+
+
+    // 面向对象----高级的
+    function ChangeStyle(btnObj, dvObj, json) {
+      this.btnObj = btnObj;
+      this.dvObj = dvObj;
+      this.json = json;
+    }
+    ChangeStyle.prototype.init = function () {
+      var that = this;
+      this.btnObj.onclick = function () {
+        for (var key in json) {
+          that.dvObj.style[key] = that.json[key];
+        };
+      };
+    };
+
+    // 实例化对象
+    var json = {
+      "width": "400px",
+      "height": "400px",
+      "backgroundColor": "yellow"
+    };
+    var cs = new ChangeStyle(my$("btn"), my$("dv"), json);
+    cs.init();
+  </script>
+</body>
+
+</html>

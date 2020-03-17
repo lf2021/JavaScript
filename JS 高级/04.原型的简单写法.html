@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Student(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex;
+    }
+    // 简单的原型写法
+    Student.prototype = {
+      //手动修改构造器的指向
+      constructor: Student,
+      study: function () {
+        console.log("学300行代码");
+      },
+      eat: function () {
+        console.log("吃大口的肉");
+      }
+    };
+    var stu = new Student("小李", 25, "男");
+    console.dir(Student);
+    console.dir(stu);
+    var arr = new Array(1, 2, 3, 4);
+    console.dir(arr);
+  </script>
+</body>
+
+</html>

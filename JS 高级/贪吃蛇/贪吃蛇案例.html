@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .map {
+      width: 800px;
+      height: 800px;
+      background-color: #ccc;
+      position: relative;
+      top: 100px;
+      left: 50%;
+      margin-left: -400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="map"></div>
+  <script src="Food.js"></script>
+  <script src="Snake.js"></script>
+  <script src="Game.js"></script>
+  <script>
+    // 创建实例对象
+    var gm = new Game(document.querySelector(".map"));
+
+    // 初始化游戏
+    gm.init();
+  </script>
+</body>
+
+</html>

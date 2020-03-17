@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 自调用函数
+    // (function () {
+    //   var num = 10;
+    // })();
+    // console.log(num); // 会报错
+
+    (function (win) {
+      var num = 10; // 局部变量
+      win.num = num;
+    })(window);
+    console.log(num);
+
+    // 如何把局部变量变成全局变量
+    // 把局部变量给window就可以了
+  </script>
+
+</body>
+
+</html>

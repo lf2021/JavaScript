@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // //为系统的内置对象的原型中添加方法
+    // String.prototype.myReverse = function () {
+    //   //this---->实例对象
+    //   for (var i = this.length - 1; i >= 0; i--) {
+    //     console.log(this[i]);
+    //   }
+    // };
+    // str = "abcdefg";
+    // str.myReverse();
+    
+    // 从小到大排序
+    Array.prototype.mySort = function () {
+      for (var i = 0; i < this.length - 1; i++) {
+        for (var j = 0; j < length - 1 - i; j++) {
+          if (this[j] < this[j + 1]) {
+            var temp = this[j];
+            this[j] = this[j + 1];
+            this[j + 1] = temp;
+          }
+        }
+      }
+      for (var i = 0; i < this.length; i++) {
+        console.log(this[i]);
+      }
+    };
+    var arr = [12, 100, 32, 88, 45];
+    arr.mySort();
+  </script>
+</body>
+
+</html>

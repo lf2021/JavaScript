@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #map {
+      width: 800px;
+      height: 800px;
+      background-color: #ccc;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <input type="button" value="start" id="btn1">
+  <input type="button" value="stop" id="btn2">
+  <script src="common.js"></script>
+  <script>
+    (function (window) {
+      function Random() {
+
+      }
+      Random.prototype.getRandom = function (min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      };
+      // 实例化对象
+      var Random = new Random();
+      // 局部变量变成全局变量
+      window.Random = Random;
+    })(window);
+
+    function Food(width, height, color) {
+      this.width = width || 20;
+      this.height = height || 20;
+      this.x = 0; // 横坐标随机产生
+      this.y = 0; // 纵坐标随机产生
+      this.color = color;
+      this.element = document.createElement("div"); // 小方块的元素
+    }
+    // 初始化小方块的显示的效果及位置---显示地图上
+    Food.prototype.init = function (map) {
+      var div = this.element;
+      div.style.position = "absolute";
+      div.style.width = this.width + "px";
+      div.style.height = this.height + "px";
+      div.style.backgroundColor = this.color;
+      // 把小方块加到地图上去
+      my$("map").appendChild(div);
+      this.render(map);
+    };
+    //产生随机位置
+    Food.prototype.render = function (map) {
+      // 随机产生横纵坐标
+      var x = Random.getRandom(0, map.offsetWidth / this.width) * this.width;
+      var y = Random.getRandom(0, map.offsetHeight / this.height) * this.height;
+      this.x = x;
+      this.y = y;
+      var div = this.element;
+      div.style.left = this.x + "px";
+      div.style.top = this.y + "px";
+    };
+    var fd = new Food(20, 20, "red");
+    var timeId = "";
+    my$("btn1").onclick = function () {
+      clearInterval(timeId);
+      timeId = setInterval(function () {
+        fd.init(map);
+      }, 50)
+    };
+    my$("btn2").onclick = function () {
+      clearInterval(timeId);
+    };
+  </script>
+
+</body>
+
+</html>
