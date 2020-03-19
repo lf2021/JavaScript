@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function showRandom() {
+      var num = parseInt(Math.random() * 10 + 1);
+      console.log(num);
+    }
+
+    showRandom();
+    showRandom();
+    showRandom();
+
+    // 闭包的方式，每次相同的随机数
+    function f1() {
+      var num = parseInt(Math.random() * 10 + 1);
+      return function () {
+        console.log(num);
+      }
+    }
+    var ff = f1();
+    ff();
+    ff();
+    ff();
+
+    //总结:如果想要缓存数据,就把这个数据放在外层的函数和里层的函数的中间位置
+
+    //闭包的作用:缓存数据.优点也是缺陷,没有及时的释放
+
+    //局部变量是在函数中,函数使用结束后,局部变量就会被自动的释放
+    //闭包后,里面的局部变量的使用作用域链就会被延长
+  </script>
+</body>
+
+</html>

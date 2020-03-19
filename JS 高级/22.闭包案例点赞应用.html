@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      list-style-type: none;
+      float: left;
+      margin-right: 50px;
+    }
+
+    input {
+      margin-left: 110px;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <li><img src="../JS 基础/images/1.jpg"><br><input type="button" value="点赞(1)"></li>
+  <li><img src="../JS 基础/images/2.jpg"><br><input type="button" value="点赞(1)"></li>
+  <li><img src="../JS 基础/images/3.jpg"><br><input type="button" value="点赞(1)"></li>
+  <li><img src="../JS 基础/images/4.jpg"><br><input type="button" value="点赞(1)"></li>
+  <script>
+    function getValue() {
+      var value = 1;
+      return function () {
+        this.value = "点赞(" + (++value) + ")";
+      }
+    }
+    var inputObj = document.getElementsByTagName("input");
+    for (var i = 0; i < inputObj.length; i++) {
+      inputObj[i].onclick = getValue();
+    }
+  </script>
+</body>
+
+</html>

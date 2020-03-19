@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 递归实现： 求n个数字的和
+    function getSum(x) {
+      if (x == 1) {
+        return 1;
+      }
+      return x + getSum(x - 1);
+    }
+    console.log(getSum(5));
+
+    // 递归实现： 求 n的阶乘
+    function getFactorial(x) {
+      if (x == 1) {
+        return 1;
+      }
+      return x * getFactorial(x - 1);
+    }
+    console.log(getFactorial(5));
+
+
+    // 递归实现： 求一个数字各个位数上的数字和
+    function getEverySum(x) {
+      if (x < 10) {
+        return x;
+      }
+      return x % 10 + getEverySum(parseInt(x / 10));
+      // x%10 是个位  parseInt(x/10) 个位前面的数字  
+      // 123---> 3 + getEverySum(12) ---> 3 + 2 +getEverySum(1) ---> 6
+    }
+    console.log(getEverySum(543));
+
+
+
+    // 递归： 求斐波那契数列 x是表示第x个数是多少
+    // 1 1 2 3 5 8 13 21 34 55 89 144...
+    function getFib(x) {
+      if (x == 1 || x == 2) {
+        return 1;
+      }
+      return getFib(x-1) + getFib(x - 2);
+    }
+    console.log(getFib(12));
+  </script>
+</body>
+
+</html>
