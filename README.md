@@ -1,7 +1,7 @@
 #### 介绍
 里面存放一些学习JavaScript的一些代码以及练习
 
-# JavaScript
+#### JavaScript
   JS包含三部分：
   ECMAScript--基本语法
   DOM--文档对象模型
