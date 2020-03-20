@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script>
+    //正则表达式中:g 表示的是全局模式匹配
+    //正则表达式中:i 表示的是忽略大小写
+
+    
+       var str="中国移动:10086,中国联通:10010,中国电信:10000";
+       //把里面所有的数字全部显示出来
+       var array=str.match(/\d{5}/g);
+       console.log(array);
+
+
+    //
+    //    var str = "123123@xx.com,fangfang@valuedopinions.cn 286669312@qq.com 2、emailenglish@emailenglish.englishtown.com 286669312@qq.com...";
+    //    var array = str.match(/\w+@\w+\.\w+(\.\w+)?/g);
+    //    console.log(array);
+
+
+    //提取这里的日
+    //    var str="2017-11-12";
+    //    var array=str.match(/(\d{4})[-](\d{2})[-](\d{2})/g);
+    //    //console.log(array);
+    //    //正则表达式对象.$3
+    //    console.log(RegExp.$3);
+
+
+    //    var email="shuaiyangtaishuaile@itcast.com.cn";
+    //    email.match(/([0-9a-zA-Z_.-]+)[@]([0-9a-zA-Z_-]+)(([.][a-zA-Z]+){1,2})/);
+    //    console.log(RegExp.$1);//用户名
+    //    console.log(RegExp.$2);//126
+    //    console.log(RegExp.$3);//域名
+
+
+    //    var str="小苏好帅哦,真的是太帅了,帅,就是真帅";
+    //    str=str.replace(/帅/g,"猥琐");
+    //    console.log(str);
+
+    //    var str="  哦买噶的    ,太幸福了  ";
+    //    str=str.trim();
+    //    console.log("==="+str+"===");
+
+
+    //    var str = "  哦买噶的    ,太幸福了  ";
+    //    str = str.replace(/\s+/g, "");
+    //    console.log("===" + str + "===");
+
+
+    //所有的h都替换成S
+    //    var str="HhpphH";//SSppSS
+    //    str=str.replace(/[h]/gi,"S");
+    //    console.log(str);
+
+
+    //    var reg = new RegExp(/[h]/gi);
+    //    var str = "HhpphH";//SSppSS
+    //    str = str.replace(reg, "S");
+    //    console.log(str);
+
+//
+//    var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+//    //把里面所有的数字全部显示出来
+//    //var array = str.match(/\d{5}/g);
+//    //正则表达式对象.exec方法传入字符串
+//    var reg=/\d{5}/g;
+//    //var array=reg.exec(str);
+////    console.log(array);
+////    console.log(reg.exec(str));
+////    console.log(reg.exec(str));
+////    console.log(reg.exec(str));
+//
+//    var result=reg.exec(str);
+//    while(result!=null){
+//      console.log(result);
+//      result=reg.exec(str);
+//    }
+
+
+
+//    var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+//    var reg=/\d{5}/g;
+//    //通过正则表达式匹配这个字符串
+//    var array=reg.exec(str);
+//    console.log(array);
+//    console.log(reg.exec(str));
+//    console.log(reg.exec(str));
+//    console.log(reg.exec(str));//null
+//
+
+
+    var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+    var reg=/\d{5}/g;
+    //通过正则表达式匹配这个字符串
+    var array=reg.exec(str);
+    while (array!=null){
+      //输出匹配的内容
+      console.log(array[0]);
+      array=reg.exec(str);
+    }
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj1 = {
+      age: 10,
+      sex: "男",
+      car: ["奔驰", "宝马", "特斯拉"]
+    }
+    // 把 a 对象的属性复制一份给 b对象
+    function extend(a, b) {
+      for (var key in a) {
+        b[key] = a[key];
+      }
+    }
+
+    var obj2={};
+    extend(obj1,obj2);
+    console.dir(obj2);
+    console.dir(obj1);
+  </script>
+</body>
+
+</html>

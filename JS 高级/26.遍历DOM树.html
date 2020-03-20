@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>遍历 DOM 树</h1>
+  <p style="color: green;">Tip: 可以在遍历的回调函数中任意定制需求</p>
+  <div>
+    <ul>
+      <li>123</li>
+      <li>456</li>
+      <li>789</li>
+    </ul>
+    <div>
+      <div>
+        <span>haha</span>
+      </div>
+    </div>
+  </div>
+  <div id="demo_node">
+    <ul>
+      <li>123</li>
+    </ul>
+    <p>hello</p>
+    <h2>world</h2>
+    <div>
+      <p>dsa</p>
+      <h3>
+        <span>dsads</span>
+      </h3>
+    </div>
+  </div>
+  <script>
+    // 根节点
+    var root = document.documentElement;
+    forDOM(root);
+
+    function forDOM(root) {
+      console.log("节点的名字：" + root.nodeName);
+
+      // 判断 root 下面还有没有子节点
+      if (root.children) {
+        var children = root.children;
+        for (var i = 0; i < children.length; i++) {
+          var child = children[i]
+          forDOM(child);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

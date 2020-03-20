@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    请输入邮箱地址：<input type="text" value="" id="email"> *<br>
+  </div>
+  <script>
+    // 注册失去焦点的事件
+    document.getElementById("email").onblur = function () {
+      // 严格模式
+      var reg = /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/;
+      if (reg.test(this.value)) {
+        this.style.backgroundColor = "green";
+      } else {
+        this.style.backgroundColor = "red";
+      }
+    }
+  </script>
+</body>
+
+</html>

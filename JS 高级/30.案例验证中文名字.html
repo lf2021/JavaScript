@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+</head>
+
+<body>
+  请输入您的名字:<input type="text" value="" id="userName" />*<br />
+  <script>
+    //是中文名字,则绿色,否则红色
+    document.getElementById("userName").onblur = function () {
+      // 这个正则表达式记住就好
+      var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+      if (reg.test(this.value)) {
+        this.style.backgroundColor = "green";
+      } else {
+        this.style.backgroundColor = "pink";
+      }
+    };
+
+
+    //[\u4e00-\u9fa5]    [一-龥(yù)]
+  </script>
+
+</body>
+
+</html>
