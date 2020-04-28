@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AttachEvent</title>
+</head>
+
+<body>
+  <input type="button" value="test" id="btn1" />
+  <script>
+    /*  
+    DOM2级事件绑定和删除事件的方法：（注意：事件名不要加on，例如：'click'）
+      addEventListener
+      removeEventListener
+
+
+    IE7 IE8绑定和删除事件的方法：（注意：事件名要加on，例如：'onclick'）
+      attachEvent
+      detachEvent
+    */
+
+    var btn1 = document.getElementById('btn1');
+    //在IE8之前出现的是相反的顺序，hello world, hello maizi
+    btn1.attachEvent('onclick', function () {
+      alert('hello maizi');
+    });
+
+    btn1.attachEvent('onclick', function () {
+      alert('hello world'); // 这个先输出
+    });
+  </script>
+</body>
+
+</html>

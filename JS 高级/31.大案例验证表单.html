@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -52,42 +53,41 @@
 </head>
 
 <body>
-<div class="container" id="dv">
-  <label for="qq">Q Q</label><input type="text" id="qq"><span></span><br/>
-  <label>手机</label><input type="text" id="phone"><span></span><br/>
-  <label>邮箱</label><input type="text" id="e-mail"><span></span><br/>
-  <label>座机</label><input type="text" id="telephone"><span></span><br/>
-  <label>姓名</label><input type="text" id="fullName"><span></span><br/>
-</div>
-<script src="common.js"></script>
-<script>
-
-  //qq的
-  checkInput(my$("qq"),/^\d{5,11}$/);
-  //手机
-  checkInput(my$("phone"),/^\d{11}$/);
-  //邮箱
-  checkInput(my$("e-mail"),/^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/);
-  //座机号码
-  checkInput(my$("telephone"),/^\d{3,4}[-]\d{7,8}$/);
-  //中文名字
-  checkInput(my$("fullName"),/^[\u4e00-\u9fa5]{2,6}$/);
-  //给我文本框,给我这个文本框相应的正则表达式,我把结果显示出来
-  //通过正则表达式验证当前的文本框是否匹配并显示结果
-  function checkInput(input,reg) {
-    //文本框注册失去焦点的事件
-    input.onblur=function () {
-      if(reg.test(this.value)){
-        this.nextElementSibling.innerText="正确了";
-        this.nextElementSibling.style.color="green";
-      }else{
-        this.nextElementSibling.innerText="让你得瑟,错了吧";
-        this.nextElementSibling.style.color="red";
-      }
-    };
-  }
-
-</script>
+  <div class="container" id="dv">
+    <label for="qq">Q Q</label><input type="text" id="qq"><span></span><br />
+    <label>手机</label><input type="text" id="phone"><span></span><br />
+    <label>邮箱</label><input type="text" id="e-mail"><span></span><br />
+    <label>座机</label><input type="text" id="telephone"><span></span><br />
+    <label>姓名</label><input type="text" id="fullName"><span></span><br />
+  </div>
+  <script src="common.js"></script>
+  <script>
+    //qq的
+    checkInput(my$("qq"), /^\d{5,11}$/);
+    //手机
+    checkInput(my$("phone"), /^\d{11}$/);
+    //邮箱
+    checkInput(my$("e-mail"), /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/);
+    //座机号码
+    checkInput(my$("telephone"), /^\d{3,4}[-]\d{7,8}$/);
+    //中文名字
+    checkInput(my$("fullName"), /^[\u4e00-\u9fa5]{2,6}$/);
+    //给我文本框,给我这个文本框相应的正则表达式,我把结果显示出来
+    //通过正则表达式验证当前的文本框是否匹配并显示结果
+    function checkInput(input, reg) {
+      //文本框注册失去焦点的事件
+      input.onblur = function () {
+        if (reg.test(this.value)) {
+          this.nextElementSibling.innerText = "正确了";
+          this.nextElementSibling.style.color = "green";
+        } else {
+          this.nextElementSibling.innerText = "让你得瑟,错了吧";
+          this.nextElementSibling.style.color = "red";
+        }
+      };
+    }
+  </script>
 
 </body>
+
 </html>

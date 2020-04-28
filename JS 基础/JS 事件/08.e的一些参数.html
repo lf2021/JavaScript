@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+
+<body>
+  <input type="button" value="test1" id="btn1" />
+  <script type="text/javascript">
+    var btn1 = document.getElementById("btn1");
+    btn1.onclick = function (event) {
+      console.log(event.type); // click
+    }
+
+
+    // target 和 currentTarget的区别：
+    // currentTarget始终是监听事件者，即 直接调用addEventlistener那个节点
+    // 而target是事件的真正发出者， 即 触发事件的节点，在click事件中就是被点击的节点。
+    btn1.addEventListener('click', function (e) {
+      console.log(e);
+      console.log(e.type); // click
+      console.log(this.tagName); // INPUT
+      console.log(e.currentTarget); // [object HTMLInputElement] 也就是 <input type="button" value="test1" id="btn1" />
+      console.log(this === e.currentTarget); // true
+      console.log(e.target); // [object HTMLInputElement] 也就是 <input type="button" value="test1" id="btn1" />
+      console.log(this === e.target); // true
+    }, false)
+
+    document.body.onclick = function (event) {
+      console.log(event.currentTarget === this); // true
+      console.log(event.target === document.getElementById('btn1')); // true
+      console.log(document.body === this); // true
+    }
+  </script>
+</body>
+
+</html>

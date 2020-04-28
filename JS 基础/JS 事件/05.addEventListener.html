@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>addEventListener</title>
+</head>
+
+<body>
+  <input type="button" value="test1" id="btn1" />
+  <input type="button" value="test2" id="btn2" />
+  <input type="button" value="test3" id="btn3" />
+  <script>
+    var btn1 = document.getElementById('btn1');
+    btn1.addEventListener('click', function () {
+      alert('a');
+    }, false);
+    btn1.addEventListener('click', function () {
+      alert('b');
+    }, false);
+    btn1.addEventListener('click', function () {
+      alert('c');
+    }, false);
+
+    var btn2 = document.getElementById('btn2');
+    var count = 0;
+    var handler = function () {
+      alert(count++);
+      if (count == 3) {
+        alert('事件被取消了');
+        btn2.removeEventListener('click', handler, false);
+      }
+    };
+    btn2.addEventListener('click', handler, false);
+
+    var btn3 = document.getElementById('btn3');
+    btn3.addEventListener('click', function () {
+      alert(123);
+      btn3.removeEventListener('click', function () { //移除事件句柄，函数必须使用外部函数，这种方式无法移除事件句柄
+        alert(123);
+      });
+    });
+  </script>
+</body>
+
+</html>

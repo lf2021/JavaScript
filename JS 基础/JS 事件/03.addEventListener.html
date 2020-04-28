@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>addEventListener</title>
+</head>
+
+<body>
+  <div id="box1" style="background: #ABCDEF;width: 300px;height: 300px;">
+    <input type="button" value="test1" id="btn1">
+  </div>
+  <script type="text/javascript">
+    var box1 = document.getElementById('box1');
+    var btn1 = document.getElementById('btn1');
+    // btn1.onclick = function f(e) {
+    //   alert('button clicked');
+
+    //   var e = e || window.event;
+
+    //   //取消冒泡的方式
+    //   //w3c取消冒泡
+    //   // e.stopPropagation();
+
+    //   //IE e.cancelBubble=true
+    //   // alert(e.cancelBubble);
+
+
+    //   // 取消冒泡的兼容代码
+    //   if (typeof e.cancelBubble == 'undefined') {
+    //     e.stopPropagation();
+    //   } else {
+    //     e.cancelBubble = true;
+    //   }
+    // };
+
+
+    box1.onclick = function () {
+      alert('div clicked');
+    };
+    document.body.onclick = function () {
+      alert('body clicked');
+    };
+    document.documentElement.onclick = function () {
+      alert('html clicked');
+    };
+    document.onclick = function () {
+      alert('document clicked');
+    };
+    //button -> div -> body -> html -> document冒泡
+  </script>
+</body>
+
+</html>
