@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+
+<body>
+  <input type="button" value="test" id="btn" />
+  <br />
+  <a href="http://www.baidu.com" id="baidu">百度</a>
+  <div id="box1">
+    <input type="button" value="test1" id="btn1" />
+  </div>
+  <script type="text/javascript">
+    // var btn = document.getElementById("btn");
+    // btn.onclick = function () {
+    //   alert(window.event.srcElement === this); // true
+    // };
+    // btn.attachEvent('onclick', function (event) { // attachEvent 仅在IE 10 以下适用
+    //   alert(event.srcElement === this); /// false
+    // });
+
+    // 阻止默认行为
+    // var link = document.getElementById("baidu");
+    // link.onclick = function (e) {
+    //   window.event.returnValue = false; //IE 取消默认行为 ,仅在IE 10 以下适用
+    //   // e.preventDefault(); // W3C 取消默认行为
+    //   // return false; // 通用的取消默认行为方法
+    // };
+
+
+    var box1 = document.getElementById("box1");
+    var btn1 = document.getElementById("btn1");
+    box1.onclick = function () {
+      alert('box1 clicked');
+    };
+    btn1.onclick = function () {
+      alert('button clicked');
+      window.event.cancelBubble = true; //IE 取消事件冒泡
+      e.stopPropagation(); // W3C 取消事件冒泡
+    };
+
+    document.body.onclick = function () {
+      alert('body clicked');
+    }
+  </script>
+</body>
+
+</html>

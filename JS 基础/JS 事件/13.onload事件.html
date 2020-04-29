@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <script src="EventUtil.js"></script>
+  <script>
+    window.onload = function () {
+      var test1 = document.getElementById("test1");
+      test1.onclick = function () {
+        alert('this is a test');
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <input type="button" value="test1" id="test1" />
+  <script>
+    // EventUtil.addHandler(window, 'load', function (event) {
+    //   alert('this is a test');
+    // });
+  </script>
+</body>
+
+</html>

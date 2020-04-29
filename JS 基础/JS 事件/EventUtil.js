@@ -39,8 +39,10 @@ var EventUtil = {
   },
   preventDefault: function (event) {
     if (event.preventDefault) {
+      // W3C 阻止默认行为
       event.preventDefault();
     } else {
+      // IE 阻止默认行为
       event.returnValue = false;
     }
   },
